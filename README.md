@@ -1,5 +1,7 @@
 # DEDSAFIO 4 Mechanics (Port a NeoForge)
 
+![Menú Dedsafio](img/menu_dedsafio.png)
+
 > **Créditos:** Creador original del mod público de DEDSAFIO 4: **EricReck**.  
 > Este repositorio contiene la adaptación y port completo de **DEDSAFIO 4 Mechanics** para **Minecraft** ejecutándose de manera nativa sobre **NeoForge**.
 
