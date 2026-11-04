@@ -1,11 +1,21 @@
-# DEDSAFIO 4 Mechanics (Port a NeoForge 1.21.1)
+# DEDSAFIO 4 Mechanics (Port a NeoForge)
 
 > **Créditos:** Creador original del mod público de DEDSAFIO 4: **EricReck**.  
-> Este repositorio contiene la adaptación y port completo de **DEDSAFIO 4 Mechanics** para **Minecraft 1.21.1** ejecutándose de manera nativa sobre **NeoForge**.
+> Este repositorio contiene la adaptación y port completo de **DEDSAFIO 4 Mechanics** para **Minecraft** ejecutándose de manera nativa sobre **NeoForge**.
 
 ---
 
-## 📌 Descripción Oficial
+## Descripción del autor del repositorio
+
+El mod es actualmente jugable, pero no se recomienda para el uso profesional, hay cosas que arreglar y mejorar (como las animaciones), igualmente esto es una prueba para trastear, se descompiló el mod de **EricReck** y se compiló para usarse en la 1.21.1 (NeoForge) y en principio todo debería de funcionar correctamente.
+
+Muchas gracias a **EricReck** por publicar el mod.
+Muchas gracias a **Eufonia** por brindar la serie.
+Muchas gracias a **elded** por hacer posible la serie.
+
+---
+
+## 📌 Descripción Original
 
 **DEDSAFIO 4 Mechanics** añade al juego las mecánicas principales de DEDSAFIO 4: eventos temporizados, cambios de dificultad, ruletas visuales, monedas, cajeros automáticos, correo entre jugadores y waypoints.
 
