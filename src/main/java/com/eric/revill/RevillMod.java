@@ -380,7 +380,16 @@ public class RevillMod {
       var modifiers = ItemGroupEvents.getModifiers(event.getTabKey());
       if (modifiers != null) {
          for (var m : modifiers) {
-            m.modifyEntries(event::accept);
+            m.modifyEntries(stack -> {
+               if (stack != null && !stack.isEmpty()) {
+                  if (!event.getParentEntries().contains(stack)) {
+                     try {
+                        event.accept(stack);
+                     } catch (IllegalArgumentException ignored) {
+                     }
+                  }
+               }
+            });
          }
       }
    }
