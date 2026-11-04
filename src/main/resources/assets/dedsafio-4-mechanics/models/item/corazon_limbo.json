@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "dedsafio-4-mechanics:item/corazon_limbo"
+  }
+}

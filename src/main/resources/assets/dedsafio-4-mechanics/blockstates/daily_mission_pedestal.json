@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "glow_model=false": {
+      "model": "dedsafio-4-mechanics:block/daily_mission_pedestal"
+    },
+    "glow_model=true": {
+      "model": "dedsafio-4-mechanics:block/daily_mission_pedestal_glow"
+    }
+  }
+}

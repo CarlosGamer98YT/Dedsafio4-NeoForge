@@ -1,0 +1,24 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.eric.revill.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "client": [
+    "BackgroundRendererMixin",
+    "HandledScreenMixin",
+    "InGameHudMixin",
+    "ClientPlayNetworkHandlerMixin",
+    "CameraMixin",
+    "ClientWorldMixin",
+    "LivingEntityRendererMixin",
+    "TitleScreenMixin",
+    "WorldRendererMixin",
+    "SodiumBlockRendererMixin",
+    "UiSoundScreenMixin",
+    "UiButtonSoundMixin",
+    "DailyCompletionChatHeadMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "ruleta": {
+    "sounds": [
+      "revill:ruleta"
+    ]
+  },
+  "muerte": {
+    "sounds": [
+      "revill:muerte"
+    ]
+  },
+  "nutria": {
+    "sounds": [
+      "revill:nutria"
+    ]
+  },
+  "fusion": {
+    "sounds": [
+      "revill:fusion"
+    ]
+  },
+  "revill": {
+    "sounds": [
+      {
+        "name": "revill:revill",
+        "stream": true
+      }
+    ]
+  },
+  "grieta": {
+    "sounds": [
+      {
+        "name": "revill:grieta",
+        "stream": true
+      }
+    ]
+  },
+  "ding": {
+    "sounds": [
+      "revill:ding"
+    ]
+  },
+  "dedita": {
+    "sounds": [
+      "revill:dedita"
+    ]
+  },
+  "ui": {
+    "sounds": [
+      "revill:ui"
+    ]
+  }
+}

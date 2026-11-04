@@ -1,0 +1,27 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.eric.revill.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "ItemEntityMixin",
+    "PlayerInventoryMixin",
+    "CreeperEntityChargedAccessor",
+    "WardenEntityMixin",
+    "BlockBreakMixin",
+    "EnderPearlEntityMixin",
+    "CarvedPumpkinMixin",
+    "LeavesBlockMixin",
+    "ZombieMixin",
+    "PressurePlateDamageMixin",
+    "DifficultyAirMixin",
+    "InvisibleMobDetectionMixin",
+    "NoAppleAbsorptionMixin",
+    "PlayerExtraHeartsMixin",
+    "PlayerManagerJoinMessageMixin",
+    "ChatMessageMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

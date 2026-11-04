@@ -1,0 +1,25 @@
+# Gradle
+.gradle/
+build/
+
+# Local tools & JDK
+.tools/
+*.jar
+!gradle/wrapper/gradle-wrapper.jar
+
+# Decompiled artifacts
+decompiled_src/
+
+# IDE files
+.idea/
+*.iml
+*.ipr
+*.iws
+.project
+.classpath
+.settings/
+.vscode/
+
+# Run / Logs
+run/
+logs/
