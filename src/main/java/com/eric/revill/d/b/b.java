@@ -1,5 +1,12 @@
 package com.eric.revill.d.b;
 
+/**
+ * Renderizador de la entidad viviente del Cajero Automático en el mundo.
+ * 
+ * Asocia el modelo 3D con la textura {@code textures/entity/cajeroent.png} y renderiza
+ * la máquina en el mundo respetando iluminación, orientación y sombras.
+ */
+
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Axis;
 import com.eric.revill.fabric.api.EnvType;

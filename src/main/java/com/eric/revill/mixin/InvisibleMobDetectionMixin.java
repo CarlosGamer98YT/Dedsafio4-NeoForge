@@ -1,5 +1,12 @@
 package com.eric.revill.mixin;
 
+/**
+ * Inyección en la percepción de entidades vivas {@link net.minecraft.world.entity.LivingEntity}.
+ * 
+ * Permite que los monstruos que se han vuelto invisibles por las reglas de dificultad
+ * mantengan su hostilidad y detección hacia los jugadores sin perder el objetivo.
+ */
+
 import com.eric.revill.g.a;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;

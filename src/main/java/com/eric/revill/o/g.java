@@ -1,5 +1,12 @@
 package com.eric.revill.o;
 
+/**
+ * Gestor de misiones diarias, estadísticas de jugadores y sistema de muerte/modo espectador.
+ * 
+ * Lee la configuración de {@code dedsafio4-missions.json}, actualiza el avance de muertes de mobs
+ * y minado de bloques, y aplica el cambio a modo espectador cuando un jugador es eliminado.
+ */
+
 import com.eric.revill.RevillMod;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -58,10 +65,12 @@ public final class g {
    private g() {
    }
 
+   /** Obtiene una copia inmutable de todas las misiones diarias activas */
    public static synchronized List<f> a() {
       return List.copyOf(g.values());
    }
 
+   /** Carga la configuración de dedsafio4-missions.json o crea el archivo por defecto si no existe */
    public static synchronized void a(MinecraftServer server) {
       try {
          if (!Files.exists(f)) {
@@ -101,6 +110,7 @@ public final class g {
       }
    }
 
+   /** Sincroniza el estado de las misiones con un jugador conectado */
    public static void a(MinecraftServer server, ServerPlayer player) {
       g.MissionState state = b(server);
       g.b progress = state.a.computeIfAbsent(player.getUUID(), ignored -> new g.b());
@@ -109,39 +119,46 @@ public final class g {
       a(player);
    }
 
+   /** Registra la muerte de una entidad para el progreso de misiones de tipo KILL */
    public static void a(ServerPlayer player, LivingEntity victim) {
       if (player != null && player.getServer() != null) {
          a(player, "KILL", BuiltInRegistries.ENTITY_TYPE.getKey(victim.getType()).toString(), 1);
       }
    }
 
+   /** Registra la rotura de un bloque para el progreso de misiones de tipo BREAK */
    public static void a(Player player, Block block) {
       if (player instanceof ServerPlayer serverPlayer) {
          a(serverPlayer, "BREAK", BuiltInRegistries.BLOCK.getKey(block).toString(), 1);
       }
    }
 
+   /** Registra la recolección o crafteo de ítems para misiones de tipo COLLECT */
    public static void a(Player player, Item item, int count) {
       if (player instanceof ServerPlayer serverPlayer && count > 0) {
          a(serverPlayer, "COLLECT", BuiltInRegistries.ITEM.getKey(item).toString(), count);
       }
    }
 
+   /** Obtiene el recuento numérico de progreso de un jugador en una misión */
    public static int a(MinecraftServer server, UUID playerId, String missionId) {
       g.b progress = b(server).a.get(playerId);
       return progress == null ? 0 : progress.b.getOrDefault(missionId, 0);
    }
 
+   /** Comprueba si el jugador ya ha completado la misión indicada */
    public static boolean b(MinecraftServer server, UUID playerId, String missionId) {
       g.b progress = b(server).a.get(playerId);
       return progress != null && progress.c.contains(missionId);
    }
 
+   /** Comprueba si el jugador ha completado alguna misión catalogada como esencial */
    public static boolean a(MinecraftServer server, UUID playerId) {
       g.b progress = b(server).a.get(playerId);
       return progress == null ? false : g.values().stream().filter(m -> m.i()).anyMatch(mission -> progress.c.contains(mission.a()));
    }
 
+   /** Reinicia completamente el progreso de misiones de un jugador */
    public static boolean b(MinecraftServer server, UUID playerId) {
       g.b progress = b(server).a.get(playerId);
       if (progress != null) {
@@ -160,6 +177,7 @@ public final class g {
       }
    }
 
+   /** Resetea una misión concreta de un jugador (comando admin) */
    public static boolean c(MinecraftServer server, UUID playerId, String missionId) {
       g.b progress = b(server).a.get(playerId);
       if (progress != null && g.containsKey(missionId)) {
@@ -183,6 +201,7 @@ public final class g {
       }
    }
 
+   /** Actualiza la lista completa de definiciones de misiones y la persiste en el archivo JSON */
    public static synchronized void a(MinecraftServer server, List<f> definitions) {
       List<f> validated = a(definitions);
 
@@ -202,6 +221,7 @@ public final class g {
       }
    }
 
+   /** Elimina una misión de la lista activa por su identificador */
    public static void a(MinecraftServer server, String missionId) {
       ArrayList<f> updated = new ArrayList<>(a());
       if (!updated.removeIf(mission -> mission.a().equals(missionId))) {
@@ -211,6 +231,7 @@ public final class g {
       }
    }
 
+   /** Envía el paquete de red con los datos de misiones sincronizados al jugador */
    public static void a(ServerPlayer player) {
       h.a(player);
    }

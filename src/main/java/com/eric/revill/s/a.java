@@ -1,5 +1,11 @@
 package com.eric.revill.s;
 
+/**
+ * Gestor de globos de texto flotantes (bocadillos de chat) sobre la cabeza de los jugadores.
+ * 
+ * Divide los mensajes largos en líneas legibles y los sincroniza a los clientes cercanos.
+ */
+
 import com.eric.revill.g.b;
 import java.util.ArrayDeque;
 import java.util.HashMap;

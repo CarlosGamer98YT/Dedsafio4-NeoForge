@@ -1,5 +1,12 @@
 package com.eric.revill.mixin;
 
+/**
+ * Inyección en el manejador de paquetes de red del cliente {@link net.minecraft.client.multiplayer.ClientPacketListener}.
+ * 
+ * Procesa la recepción de paquetes de estado del mod, apertura forzada de pantallas de cinemática
+ * y sincronización de balances bancarios de Dedita.
+ */
+
 import com.eric.revill.RevillClient;
 import net.minecraft.client.multiplayer.ClientPacketListener;
 import net.minecraft.client.renderer.GameRenderer;

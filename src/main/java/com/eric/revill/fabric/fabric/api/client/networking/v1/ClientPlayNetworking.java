@@ -1,5 +1,12 @@
 package com.eric.revill.fabric.fabric.api.client.networking.v1;
 
+/**
+ * Adaptador de red de cliente de Fabric API a NeoForge.
+ * 
+ * Gestiona el envío y recepción de paquetes de red identificados por {@link net.minecraft.resources.ResourceLocation}
+ * encapsulándolos a través de los canales de red de NeoForge.
+ */
+
 import io.netty.buffer.Unpooled;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;

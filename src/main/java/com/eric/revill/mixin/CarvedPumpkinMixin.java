@@ -1,5 +1,12 @@
 package com.eric.revill.mixin;
 
+/**
+ * Inyección en el bloque de calabaza tallada {@link net.minecraft.world.level.block.CarvedPumpkinBlock}.
+ * 
+ * Aplica restricciones o efectos de visión en retos específicos donde el uso de calabazas
+ * es obligatorio o está penalizado.
+ */
+
 import com.eric.revill.g.a;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;

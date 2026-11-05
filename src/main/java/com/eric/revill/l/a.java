@@ -1,5 +1,9 @@
 package com.eric.revill.l;
 
+/**
+ * Huevo generador (Spawn Egg) para invocar la entidad del Cajero Automático.
+ */
+
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.UUID;

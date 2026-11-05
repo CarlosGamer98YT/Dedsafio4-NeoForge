@@ -1,5 +1,9 @@
 package com.eric.revill.n;
 
+/**
+ * Generador y gestor de partículas para la lluvia de meteoritos durante el evento REVILL.
+ */
+
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;

@@ -1,5 +1,12 @@
 package com.eric.revill.d.b;
 
+/**
+ * Renderizador 3D para el bloque del Buzón de Correo (BlockEntityRenderer).
+ * 
+ * Renderiza la geometría del buzón, incluyendo la banderola de aviso de correo nuevo
+ * levantada o bajada según haya cartas pendientes de leer.
+ */
+
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.eric.revill.fabric.api.EnvType;
 import com.eric.revill.fabric.api.Environment;

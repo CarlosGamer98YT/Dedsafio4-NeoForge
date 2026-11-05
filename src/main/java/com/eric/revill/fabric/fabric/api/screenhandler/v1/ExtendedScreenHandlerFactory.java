@@ -1,5 +1,12 @@
 package com.eric.revill.fabric.fabric.api.screenhandler.v1;
 
+/**
+ * Interfaz de fábrica extendida de menús contenedores de Fabric API adaptada a NeoForge.
+ * 
+ * Permite serializar datos adicionales en un {@link net.minecraft.network.FriendlyByteBuf}
+ * al momento de abrir una interfaz de usuario para el jugador.
+ */
+
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.RegistryFriendlyByteBuf;
 import net.minecraft.server.level.ServerPlayer;

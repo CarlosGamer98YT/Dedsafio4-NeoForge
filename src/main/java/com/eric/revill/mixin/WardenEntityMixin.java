@@ -1,5 +1,11 @@
 package com.eric.revill.mixin;
 
+/**
+ * Inyección en la entidad Warden {@link net.minecraft.world.entity.monster.warden.Warden}.
+ * 
+ * Ajusta su agresividad y detección en eventos especiales de combate o desafíos finales de la serie.
+ */
+
 import com.eric.revill.g.a;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;

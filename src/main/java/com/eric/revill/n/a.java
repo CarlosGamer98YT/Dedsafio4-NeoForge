@@ -1,5 +1,9 @@
 package com.eric.revill.n;
 
+/**
+ * Representación matemática de la trayectoria y velocidad de un meteorito o partícula.
+ */
+
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.Display.BlockDisplay;

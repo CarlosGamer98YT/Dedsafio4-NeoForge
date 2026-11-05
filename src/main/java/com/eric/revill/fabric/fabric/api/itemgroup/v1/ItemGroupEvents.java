@@ -1,5 +1,11 @@
 package com.eric.revill.fabric.fabric.api.itemgroup.v1;
 
+/**
+ * Adaptador de Fabric API para la modificación de contenidos de pestañas creativas.
+ * 
+ * Permite agregar dinámicamente ítems a grupos del modo creativo sin duplicaciones.
+ */
+
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;

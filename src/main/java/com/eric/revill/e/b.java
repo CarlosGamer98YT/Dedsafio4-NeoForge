@@ -1,5 +1,15 @@
 package com.eric.revill.e;
 
+/**
+ * Subárbol de comandos de economía: `/dedsafio4 coins`
+ * 
+ * Permite a los operadores gestionar y consultar los saldos de Dedita de los jugadores:
+ * - `/dedsafio4 coins`: Abre el panel gráfico de economía para el jugador que lo ejecuta.
+ * - `/dedsafio4 coins add <jugador> <tipo> <cantidad>`: Añade monedas (azul, roja, verde) al saldo.
+ * - `/dedsafio4 coins remove <jugador> <tipo> <cantidad>`: Retira monedas del saldo.
+ * - `/dedsafio4 coins see <jugador>`: Consulta el saldo actual de un jugador específico.
+ */
+
 import com.eric.revill.h.d;
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.arguments.IntegerArgumentType;

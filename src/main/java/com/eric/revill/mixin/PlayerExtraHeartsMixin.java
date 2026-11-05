@@ -1,5 +1,13 @@
 package com.eric.revill.mixin;
 
+/**
+ * Inyección en la clase de jugador {@link net.minecraft.world.entity.player.Player}.
+ * 
+ * Implementa la interfaz {@link com.eric.revill.q.a} para dotar a los jugadores de persistencia
+ * de corazones rojos permanentes adicionales consumidos mediante el ítem de Corazón Rojo,
+ * guardándolos en NBT y sincronizándolos al revivir.
+ */
+
 import com.eric.revill.q.a;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.entity.player.Player;

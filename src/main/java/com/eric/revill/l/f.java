@@ -1,5 +1,12 @@
 package com.eric.revill.l;
 
+/**
+ * Ítem Palitomágico.
+ * 
+ * Al interactuar sobre otro jugador, lo teletransporta instantáneamente a su punto
+ * de reaparición (cama / ancla de reaparición) con efectos de partículas y sonido.
+ */
+
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.DustParticleOptions;

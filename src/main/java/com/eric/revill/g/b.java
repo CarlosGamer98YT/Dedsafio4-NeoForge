@@ -1,5 +1,12 @@
 package com.eric.revill.g;
 
+/**
+ * Canales e identificadores de red (ResourceLocation) para retos y eventos de DEDSAFIO 4.
+ * 
+ * Define las rutas de paquetes para abrir menús, alternar retos, sincronizar estados,
+ * lanzar ruletas personalizadas, cinemática de muerte y bocadillos de chat flotantes.
+ */
+
 import net.minecraft.resources.ResourceLocation;
 
 public final class b {

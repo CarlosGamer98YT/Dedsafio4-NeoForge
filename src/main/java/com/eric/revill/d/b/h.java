@@ -1,5 +1,12 @@
 package com.eric.revill.d.b;
 
+/**
+ * Renderizador de notificación emergente (Toast) del Buzón de Correo.
+ * 
+ * Muestra una alerta visual animada con la textura {@code textures/gui/mensaje.png}
+ * cuando el jugador recibe una nueva carta con o sin objetos adjuntos.
+ */
+
 import com.eric.revill.fabric.api.EnvType;
 import com.eric.revill.fabric.api.Environment;
 import net.minecraft.client.Minecraft;

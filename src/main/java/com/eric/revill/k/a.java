@@ -1,5 +1,12 @@
 package com.eric.revill.k;
 
+/**
+ * Gestor del sistema de Gremios / Clanes de DEDSAFIO 4.
+ * 
+ * Permite a los jugadores crear gremios, invitar miembros, asignar un estandarte distintivo,
+ * gestionar rangos y persistir los datos de equipos en el Scoreboard y SavedData del servidor.
+ */
+
 import com.eric.revill.RevillMod;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -36,6 +43,7 @@ public final class a {
    private a() {
    }
 
+   /** Inicializa y sincroniza todos los gremios en el Scoreboard al arrancar el servidor */
    public static void a(MinecraftServer server) {
       a.f state = d(server);
 
@@ -47,6 +55,7 @@ public final class a {
       c(server);
    }
 
+   /** Actualiza el nombre del jugador en el registro de su hermandad y le envía su estado */
    public static void a(ServerPlayer player) {
       a.Guild guild = a(player.getServer(), player.getUUID());
       if (guild != null) {
@@ -60,6 +69,7 @@ public final class a {
       b(player.getServer());
    }
 
+   /** Envía el paquete de red al cliente con los datos de su gremio e invitaciones pendientes */
    public static void b(ServerPlayer player) {
       a.Guild guild = a(player.getServer(), player.getUUID());
       CompoundTag snapshot = new CompoundTag();
@@ -86,6 +96,7 @@ public final class a {
       ServerPlayNetworking.send(player, com.eric.revill.k.b.b, buf);
    }
 
+   /** Difunde la actualización de la hermandad a todos sus integrantes conectados */
    public static void a(MinecraftServer server, a.Guild guild) {
       for (a.d member : guild.h.values()) {
          ServerPlayer player = server.getPlayerList().getPlayer(member.a);
@@ -98,6 +109,7 @@ public final class a {
       c(server);
    }
 
+   /** Sincroniza la lista de gremios y miembros con todos los clientes del servidor */
    public static void b(MinecraftServer server) {
       if (server != null) {
          FriendlyByteBuf buf = PacketByteBufs.create();
@@ -120,6 +132,7 @@ public final class a {
       }
    }
 
+   /** Registra los waypoints y marcas compartidas de todos los gremios en el gestor de waypoints */
    private static void c(MinecraftServer server) {
       ArrayList<com.eric.revill.t.a> waypoints = new ArrayList<>();
 
@@ -132,6 +145,7 @@ public final class a {
       com.eric.revill.t.b.a(server, waypoints);
    }
 
+   /** Busca y devuelve la hermandad a la que pertenece un jugador por su UUID */
    public static a.Guild a(MinecraftServer server, UUID playerId) {
       for (a.Guild guild : d(server).a.values()) {
          if (guild.h.containsKey(playerId)) {
@@ -142,6 +156,7 @@ public final class a {
       return null;
    }
 
+   /** Crea una nueva hermandad con el fundador, nombre y color especificados */
    public static void a(MinecraftServer server, ServerPlayer founder, String name, int color) {
       a(name, 32, "El nombre");
       if (!b(color)) {
@@ -171,6 +186,7 @@ public final class a {
       }
    }
 
+   /** Envía una invitación para unirse a la hermandad a un jugador objetivo */
    public static void a(MinecraftServer server, ServerPlayer inviter, String targetName) {
       a.Guild guild = c(server, inviter);
       ServerPlayer target = server.getPlayerList().getPlayerByName(targetName.trim());

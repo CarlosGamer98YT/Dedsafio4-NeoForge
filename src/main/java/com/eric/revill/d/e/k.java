@@ -1,5 +1,14 @@
 package com.eric.revill.d.e;
 
+/**
+ * Pantalla del Sistema de Gremios / Hermandades.
+ * 
+ * Permite a los jugadores:
+ * - Crear una nueva hermandad con nombre y color personalizado.
+ * - Consultar la lista de miembros y rangos.
+ * - Enviar o aceptar invitaciones de otros jugadores.
+ */
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;

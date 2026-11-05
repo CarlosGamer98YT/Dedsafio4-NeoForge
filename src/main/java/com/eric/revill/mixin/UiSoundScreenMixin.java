@@ -1,5 +1,12 @@
 package com.eric.revill.mixin;
 
+/**
+ * Inyección en el controlador del ratón {@link net.minecraft.client.MouseHandler}.
+ * 
+ * Detecta interacciones con interfaces de usuario personalizadas para asegurar que todos los clics
+ * y arrastres produzcan la retroalimentación auditiva adecuada.
+ */
+
 import com.eric.revill.d.e.q;
 import com.eric.revill.r.a;
 import com.eric.revill.fabric.api.EnvType;

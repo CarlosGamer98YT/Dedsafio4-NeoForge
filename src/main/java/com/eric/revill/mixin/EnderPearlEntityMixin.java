@@ -1,5 +1,12 @@
 package com.eric.revill.mixin;
 
+/**
+ * Inyección en la entidad de perla de ender {@link net.minecraft.world.entity.projectile.ThrownEnderpearl}.
+ * 
+ * Aplica restricciones de teletransporte o efectos adversos en días donde el uso de ender pearls
+ * está condicionado por las reglas del desafío.
+ */
+
 import com.eric.revill.g.a;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;

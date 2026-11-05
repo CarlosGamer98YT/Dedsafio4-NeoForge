@@ -1,5 +1,9 @@
 package com.eric.revill.o;
 
+/**
+ * Registro del bloque e ítem del Pedestal de Desafíos Diarios.
+ */
+
 import com.eric.revill.ForgeRegistration;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;

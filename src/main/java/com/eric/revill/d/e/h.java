@@ -1,5 +1,15 @@
 package com.eric.revill.d.e;
 
+/**
+ * Panel de Control General de Administración de DEDSAFIO 4.
+ * 
+ * Interfaz de control maestro para administradores con pestañas para:
+ * - INICIO: Resumen general y estadísticas.
+ * - CAMBIOS: Activar o desactivar retos de dificultad.
+ * - WAYPOINTS: Configurar coordenadas de teletransporte y puntos clave.
+ * - REVILL: Configurar tiempo, objetivo y lanzar el Momento Revill.
+ */
+
 import com.eric.revill.RevillMod;
 import java.util.ArrayList;
 import java.util.HashMap;

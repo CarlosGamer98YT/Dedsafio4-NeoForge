@@ -1,5 +1,12 @@
 package com.eric.revill.mixin;
 
+/**
+ * Inyección en el mundo del cliente {@link net.minecraft.client.multiplayer.ClientLevel}.
+ * 
+ * Intercepta los cálculos de color del cielo y de nubes para proyectar el cielo rojo del Momento Revill
+ * y sincronizar partículas atmosféricas.
+ */
+
 import com.eric.revill.RevillClient;
 import com.eric.revill.fabric.api.EnvType;
 import com.eric.revill.fabric.api.Environment;

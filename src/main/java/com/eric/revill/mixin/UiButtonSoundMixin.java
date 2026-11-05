@@ -1,5 +1,12 @@
 package com.eric.revill.mixin;
 
+/**
+ * Inyección en componentes de interfaz gráfica {@link net.minecraft.client.gui.components.AbstractWidget}.
+ * 
+ * Reemplaza o complementa el sonido estándar de clic de Minecraft por el efecto sonoro característico
+ * de los botones de DEDSAFIO 4.
+ */
+
 import com.eric.revill.d.e.q;
 import com.eric.revill.fabric.api.EnvType;
 import com.eric.revill.fabric.api.Environment;

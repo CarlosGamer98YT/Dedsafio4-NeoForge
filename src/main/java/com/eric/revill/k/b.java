@@ -1,5 +1,11 @@
 package com.eric.revill.k;
 
+/**
+ * Canales de red para el sistema de Gremios / Clanes.
+ * 
+ * Maneja las peticiones de creación, invitaciones y sincronización de gremios entre cliente y servidor.
+ */
+
 import com.eric.revill.fabric.fabric.api.networking.v1.PacketByteBufs;
 import com.eric.revill.fabric.fabric.api.networking.v1.ServerPlayConnectionEvents;
 import com.eric.revill.fabric.fabric.api.networking.v1.ServerPlayNetworking;

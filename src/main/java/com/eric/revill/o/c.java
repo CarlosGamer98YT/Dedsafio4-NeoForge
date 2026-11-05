@@ -1,5 +1,9 @@
 package com.eric.revill.o;
 
+/**
+ * Canales de red para la interacción y entrega de misiones en el Pedestal.
+ */
+
 import com.eric.revill.fabric.fabric.api.networking.v1.ServerPlayNetworking;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;

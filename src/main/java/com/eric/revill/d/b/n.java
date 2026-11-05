@@ -1,5 +1,12 @@
 package com.eric.revill.d.b;
 
+/**
+ * Renderizador 3D de Marcadores Visuales de Waypoints en el mundo.
+ * 
+ * Dibuja balizas e iconos tridimensionales flotantes en las coordenadas exactas de cada waypoint
+ * (estrellas, colores personalizados y etiquetas de distancia).
+ */
+
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.eric.revill.fabric.api.EnvType;
 import com.eric.revill.fabric.api.Environment;

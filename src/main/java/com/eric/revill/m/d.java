@@ -1,5 +1,9 @@
 package com.eric.revill.m;
 
+/**
+ * Almacenamiento en memoria y disco de las cartas de correo pendientes de cada jugador.
+ */
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;

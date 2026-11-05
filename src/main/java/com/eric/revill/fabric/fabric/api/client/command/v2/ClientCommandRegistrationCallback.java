@@ -1,5 +1,11 @@
 package com.eric.revill.fabric.fabric.api.client.command.v2;
 
+/**
+ * Interfaz de callback de Fabric API para registrar comandos de cliente.
+ * 
+ * Disparada durante la inicialización de comandos en el cliente para asociar árboles de Brigadier.
+ */
+
 import com.mojang.brigadier.CommandDispatcher;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;

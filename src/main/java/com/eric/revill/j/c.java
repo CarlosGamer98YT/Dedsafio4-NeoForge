@@ -1,5 +1,13 @@
 package com.eric.revill.j;
 
+/**
+ * Tipos de tarea u objetivo durante el evento REVILL.
+ * 
+ * - BUNKER: Los jugadores deben refugiarse dentro de las coordenadas del búnker.
+ * - SUBIR_250: Los jugadores deben alcanzar y mantenerse en la capa Y >= 250.
+ * - BAJAR_-250: Los jugadores deben descender hasta la capa Y <= -1.
+ */
+
 import net.minecraft.server.level.ServerPlayer;
 
 public enum c {

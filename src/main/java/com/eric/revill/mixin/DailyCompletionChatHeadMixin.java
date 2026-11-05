@@ -1,5 +1,12 @@
 package com.eric.revill.mixin;
 
+/**
+ * Inyección en el componente de chat del cliente {@link net.minecraft.client.gui.components.ChatComponent}.
+ * 
+ * Dibuja la cabeza del jugador (avatar facial) al lado de los mensajes de chat
+ * y de los avisos de misiones diarias completadas.
+ */
+
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.eric.revill.fabric.api.EnvType;
 import com.eric.revill.fabric.api.Environment;

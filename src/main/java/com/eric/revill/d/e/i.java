@@ -1,5 +1,12 @@
 package com.eric.revill.d.e;
 
+/**
+ * Subpantalla de Administración de Economía.
+ * 
+ * Permite a los administradores añadir o sustraer monedas (Azul, Roja, Verde)
+ * directamente al saldo de cualquier jugador conectado.
+ */
+
 import com.eric.revill.fabric.api.EnvType;
 import com.eric.revill.fabric.api.Environment;
 import com.eric.revill.fabric.fabric.api.client.networking.v1.ClientPlayNetworking;

@@ -1,5 +1,12 @@
 package com.eric.revill.fabric.fabric.api.client.event.lifecycle.v1;
 
+/**
+ * Adaptador de eventos de ciclo de vida del cliente de Fabric API a NeoForge.
+ * 
+ * Traduce las suscripciones de inicio y fin de tick de cliente al bus de eventos de NeoForge
+ * ({@link net.neoforged.neoforge.client.event.ClientTickEvent.Pre} y {@code Post}).
+ */
+
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 import net.minecraft.client.Minecraft;

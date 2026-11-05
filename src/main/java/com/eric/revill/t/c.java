@@ -1,5 +1,9 @@
 package com.eric.revill.t;
 
+/**
+ * Entidad auxiliar en cliente para el renderizado del marcador visual de un waypoint.
+ */
+
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;

@@ -1,5 +1,12 @@
 package com.eric.revill.d.e;
 
+/**
+ * Componente auxiliar de lista desplegable y paginación para interfaces gráficas.
+ * 
+ * Gestiona el desplazamiento vertical (scroll), la selección de elementos y el filtrado
+ * de listas (por ejemplo, lista de jugadores en el buzón o lista de gremios).
+ */
+
 import com.eric.revill.fabric.api.EnvType;
 import com.eric.revill.fabric.api.Environment;
 import net.minecraft.client.gui.GuiGraphics;

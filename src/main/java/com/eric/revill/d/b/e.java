@@ -1,5 +1,12 @@
 package com.eric.revill.d.b;
 
+/**
+ * Renderizador 3D para el Pedestal de Desafíos Diarios (BlockEntityRenderer).
+ * 
+ * Renderiza el ítem objetivo de la misión actual flotando y rotando suavemente
+ * sobre la superficie del bloque pedestal en el mundo.
+ */
+
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.eric.revill.fabric.api.EnvType;
 import com.eric.revill.fabric.api.Environment;

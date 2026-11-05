@@ -1,5 +1,11 @@
 package com.eric.revill.fabric.fabric.api.event.player;
 
+/**
+ * Adaptador de eventos de rotura de bloques por jugadores de Fabric API a NeoForge.
+ * 
+ * Vinculado con {@link net.neoforged.neoforge.event.level.BlockEvent.BreakEvent}.
+ */
+
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 import net.minecraft.core.BlockPos;

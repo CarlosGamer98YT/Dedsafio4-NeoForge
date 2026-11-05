@@ -1,5 +1,12 @@
 package com.eric.revill.mixin;
 
+/**
+ * Inyección en las pantallas de inventario y menús contenedores {@link net.minecraft.client.gui.screens.inventory.AbstractContainerScreen}.
+ * 
+ * Integra la reproducción de efectos de sonido personalizados al hacer clic en casillas
+ * y gestiona el renderizado de botones y fondos de las interfaces de DEDSAFIO 4.
+ */
+
 import com.eric.revill.l.g;
 import com.eric.revill.fabric.api.EnvType;
 import com.eric.revill.fabric.api.Environment;

@@ -1,5 +1,12 @@
 package com.eric.revill.fabric.fabric.api.client.rendering.v1;
 
+/**
+ * Adaptador de eventos de renderizado del mundo de Fabric API a NeoForge.
+ * 
+ * Conecta los puntos de inyección antes y después del renderizado de entidades del nivel
+ * con el evento {@link net.neoforged.neoforge.client.event.RenderLevelStageEvent} de NeoForge.
+ */
+
 import com.mojang.blaze3d.vertex.PoseStack;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;

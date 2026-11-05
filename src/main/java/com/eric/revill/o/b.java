@@ -1,5 +1,9 @@
 package com.eric.revill.o;
 
+/**
+ * BlockEntity del Pedestal de Desafíos Diarios.
+ */
+
 import java.util.Arrays;
 import java.util.List;
 import net.minecraft.core.BlockPos;

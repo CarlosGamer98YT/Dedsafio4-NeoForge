@@ -1,5 +1,11 @@
 package com.eric.revill.fabric.fabric.api.client.command.v2;
 
+/**
+ * Adaptador de Fabric API para registrar comandos de cliente con Brigadier en NeoForge.
+ * 
+ * Proporciona métodos de utilidad para construir comandos que se ejecutan en el hilo local del cliente.
+ */
+
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import net.minecraft.commands.CommandSourceStack;
 

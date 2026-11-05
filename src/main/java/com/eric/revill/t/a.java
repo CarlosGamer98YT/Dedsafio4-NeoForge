@@ -1,5 +1,11 @@
 package com.eric.revill.t;
 
+/**
+ * Modelo de datos de un Waypoint.
+ * 
+ * Contiene ID único, nombre, posición de bloque, icono gráfico, color hexadecimal y dimensión.
+ */
+
 import net.minecraft.core.BlockPos;
 
 public class a {

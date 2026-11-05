@@ -1,5 +1,12 @@
 package com.eric.revill.mixin;
 
+/**
+ * Inyección en entidades vivas y zombis {@link net.minecraft.world.entity.LivingEntity}.
+ * 
+ * Aplica modificadores de velocidad, equipamiento de armas encantadas y habilidades agresivas
+ * a los monstruos según el reto del día seleccionado.
+ */
+
 import com.eric.revill.g.a;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.damagesource.DamageSource;

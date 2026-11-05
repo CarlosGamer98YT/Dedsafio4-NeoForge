@@ -1,5 +1,12 @@
 package com.eric.revill.d.e;
 
+/**
+ * Botón gráfico personalizado con estilo visual de DEDSAFIO 4.
+ * 
+ * Extiende la clase {@link net.minecraft.client.gui.components.Button} añadiendo
+ * estados resaltados al pasar el cursor y sonidos característicos al pulsar.
+ */
+
 import java.util.Objects;
 import com.eric.revill.fabric.api.EnvType;
 import com.eric.revill.fabric.api.Environment;

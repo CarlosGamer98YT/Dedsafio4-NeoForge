@@ -1,5 +1,14 @@
 package com.eric.revill.g;
 
+/**
+ * Gestor central de retos y cambios de dificultad de DEDSAFIO 4.
+ * 
+ * Controla el estado de activación de los 21 retos divididos en los 6 días de la serie
+ * (Creepers electrificados, restricciones de armadura de netherite, ceguera, asfixia, etc.).
+ * También coordina la ruleta visual y la penalización de poner a los jugadores en modo
+ * espectador cuando mueren durante los retos.
+ */
+
 import com.eric.revill.RevillMod;
 import com.eric.revill.l.g;
 import java.util.ArrayList;
@@ -46,10 +55,12 @@ public final class a {
    private a() {
    }
 
+   /** Obtiene la lista completa de todos los retos y cambios de dificultad registrados */
    public static List<a.DifficultyChange> a() {
       return new ArrayList<>(m);
    }
 
+   /** Obtiene la lista de retos programados para un día específico (1 a 6) */
    public static List<a.DifficultyChange> a(int day) {
       ArrayList<a.DifficultyChange> result = new ArrayList<>();
 
@@ -62,16 +73,19 @@ public final class a {
       return result;
    }
 
+   /** Comprueba si un reto de dificultad específico se encuentra activo en el servidor */
    public static boolean a(String id) {
       return l.getOrDefault(id, false);
    }
 
+   /** Modifica el estado activo/inactivo de un reto en el mapa en memoria */
    public static void a(String id, boolean enabled) {
       if (f(id) != null) {
          l.put(id, enabled);
       }
    }
 
+   /** Activa o desactiva un reto en el servidor, ejecuta acciones inmediatas y notifica a los jugadores */
    public static void a(MinecraftServer server, String id, boolean enabled) {
       a.DifficultyChange change = f(id);
       if (server != null && change != null) {
@@ -88,6 +102,7 @@ public final class a {
       }
    }
 
+   /** Sincroniza el estado de activación de todos los retos hacia todos los clientes conectados */
    public static void a(MinecraftServer server) {
       for (ServerPlayer player : server.getPlayerList().getPlayers()) {
          FriendlyByteBuf buf = PacketByteBufs.create();
@@ -96,6 +111,7 @@ public final class a {
       }
    }
 
+   /** Sincroniza el estado de los retos hacia un jugador específico */
    public static void a(ServerPlayer player) {
       if (player != null) {
          FriendlyByteBuf buf = PacketByteBufs.create();

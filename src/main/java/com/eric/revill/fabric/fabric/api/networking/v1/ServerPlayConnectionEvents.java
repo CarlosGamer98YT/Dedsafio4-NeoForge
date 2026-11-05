@@ -1,5 +1,9 @@
 package com.eric.revill.fabric.fabric.api.networking.v1;
 
+/**
+ * Adaptador de eventos de conexión y desconexión de jugadores en el servidor.
+ */
+
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 import net.minecraft.server.MinecraftServer;

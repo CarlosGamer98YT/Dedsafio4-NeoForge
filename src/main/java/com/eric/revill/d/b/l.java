@@ -1,5 +1,12 @@
 package com.eric.revill.d.b;
 
+/**
+ * Renderizador del fondo personalizado del Menú Principal.
+ * 
+ * Sustituye o superpone el fondo panorámico por defecto con la imagen temática oficial
+ * de DEDSAFIO 4 ({@code textures/gui/title/fondo.png}).
+ */
+
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.eric.revill.fabric.api.EnvType;
 import com.eric.revill.fabric.api.Environment;

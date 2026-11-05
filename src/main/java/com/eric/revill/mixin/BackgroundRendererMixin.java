@@ -1,5 +1,12 @@
 package com.eric.revill.mixin;
 
+/**
+ * Inyección en el renderizador de niebla {@link net.minecraft.client.renderer.FogRenderer}.
+ * 
+ * Modifica el color, densidad y distancia de la niebla durante el "MOMENTO REVILL"
+ * para teñir la atmósfera de un rojo carmesí apocalíptico y reducir la visibilidad.
+ */
+
 import com.eric.revill.RevillClient;
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.eric.revill.fabric.api.EnvType;

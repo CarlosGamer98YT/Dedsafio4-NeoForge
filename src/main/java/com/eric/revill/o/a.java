@@ -1,5 +1,11 @@
 package com.eric.revill.o;
 
+/**
+ * Bloque Pedestal de Desafíos Diarios.
+ * 
+ * Bloque interactivo donde los jugadores entregan los objetos requeridos para completar misiones diarias.
+ */
+
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;

@@ -1,5 +1,12 @@
 package com.eric.revill.d.e;
 
+/**
+ * Pantalla de Lectura y Reclamo de Correo del Buzón.
+ * 
+ * Muestra la bandeja de entrada del jugador con las cartas recibidas, el remitente,
+ * el cuerpo del mensaje y un botón para reclamar los ítems adjuntos a su inventario.
+ */
+
 import java.util.List;
 import com.eric.revill.fabric.api.EnvType;
 import com.eric.revill.fabric.api.Environment;

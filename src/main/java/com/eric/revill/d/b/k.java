@@ -1,5 +1,12 @@
 package com.eric.revill.d.b;
 
+/**
+ * Renderizador de la animación de la Ruleta de Retos.
+ * 
+ * Dibuja la animación visual giratoria de la ruleta cuando el administrador o el servidor
+ * lanzan la selección de un nuevo reto diario de dificultad.
+ */
+
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.eric.revill.fabric.api.EnvType;

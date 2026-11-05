@@ -1,5 +1,9 @@
 package com.eric.revill.fabric.fabric.api.event.player;
 
+/**
+ * Callback de interacción del jugador con entidades (clic derecho) adaptado a NeoForge.
+ */
+
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 import net.minecraft.world.InteractionHand;

@@ -1,5 +1,12 @@
 package com.eric.revill.d.b;
 
+/**
+ * Renderizador de iconos y distintivos de Hermandad / Gremio.
+ * 
+ * Dibuja los estandartes y placas de nombre personalizadas con el color del clan
+ * sobre las cabezas de los jugadores en tercera persona o en la lista de jugadores (Tab).
+ */
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;

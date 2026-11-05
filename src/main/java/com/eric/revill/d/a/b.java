@@ -1,5 +1,13 @@
 package com.eric.revill.d.a;
 
+/**
+ * Almacén y estado en cliente de la información de Gremios / Hermandades.
+ * 
+ * Mantiene en caché local el estado del jugador respecto a su gremio (si pertenece a uno,
+ * nombre del gremio, color distintivo, lista de miembros y solicitudes de unión pendientes)
+ * para alimentar los menús y el renderizado en pantalla sin consultar constantemente al servidor.
+ */
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;

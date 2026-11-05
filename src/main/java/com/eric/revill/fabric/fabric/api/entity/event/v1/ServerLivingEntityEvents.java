@@ -1,5 +1,12 @@
 package com.eric.revill.fabric.fabric.api.entity.event.v1;
 
+/**
+ * Adaptador de eventos de entidades vivas de Fabric API a NeoForge.
+ * 
+ * Captura eventos de muerte y daño letal de jugadores y entidades para aplicar mecánicas
+ * de modo espectador y recompensas de misiones.
+ */
+
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 import net.minecraft.world.damagesource.DamageSource;

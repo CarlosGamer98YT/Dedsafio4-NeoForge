@@ -13,11 +13,22 @@ import net.minecraft.world.item.Item.Properties;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.Level;
 
+/**
+ * Ítem de la Guía de Administración de DEDSAFIO 4.
+ * 
+ * Al hacer clic derecho, si el jugador tiene permisos de operador (nivel 4),
+ * envía un paquete de red al cliente para abrir la interfaz gráfica {@code AdminGuideScreen},
+ * la cual documenta todos los comandos y mecánicas del evento.
+ * 
+ * También contiene el método utilitario {@link #grantOnLogin(ServerPlayer)}
+ * para entregar automáticamente el libro al operador al entrar al servidor.
+ */
 public final class AdminGuideItem extends Item {
    public AdminGuideItem(Properties settings) {
       super(settings);
    }
 
+   @Override
    public InteractionResultHolder<ItemStack> use(Level world, Player user, InteractionHand hand) {
       ItemStack stack = user.getItemInHand(hand);
       if (!world.isClientSide && user instanceof ServerPlayer player) {
@@ -26,23 +37,30 @@ public final class AdminGuideItem extends Item {
             return InteractionResultHolder.fail(stack);
          }
 
+         // Envía el paquete para abrir la pantalla AdminGuideScreen en el cliente
          ServerPlayNetworking.send(player, com.eric.revill.g.b.o, PacketByteBufs.empty());
       }
 
       return InteractionResultHolder.sidedSuccess(stack, world.isClientSide);
    }
 
+   /**
+    * Entrega la guía de administración en el inventario del jugador al iniciar sesión
+    * si posee permisos de operador de nivel 4 y aún no tiene una en su inventario.
+    * 
+    * @param player Jugador que acaba de ingresar.
+    */
    public static void grantOnLogin(ServerPlayer player) {
       if (player.hasPermissions(4)) {
          for (int slot = 0; slot < player.getInventory().getContainerSize(); slot++) {
             if (player.getInventory().getItem(slot).is(g.t.get())) {
-               return;
+               return; // Ya la tiene
             }
          }
 
          ItemStack guide = new ItemStack((ItemLike)g.t.get());
          if (!player.getInventory().add(guide) && !guide.isEmpty()) {
-            player.drop(guide, false);
+            player.drop(guide, false); // Si el inventario está lleno, la suelta
          }
       }
    }

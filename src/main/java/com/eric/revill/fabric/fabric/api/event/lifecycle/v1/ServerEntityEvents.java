@@ -1,5 +1,9 @@
 package com.eric.revill.fabric.fabric.api.event.lifecycle.v1;
 
+/**
+ * Adaptador de eventos de carga y descarga de entidades en mundos del servidor.
+ */
+
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 import net.minecraft.server.level.ServerLevel;

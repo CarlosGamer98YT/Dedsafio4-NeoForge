@@ -1,5 +1,11 @@
 package com.eric.revill.m;
 
+/**
+ * Menú contenedor (ScreenHandler) para redactar y enviar correo desde el Buzón.
+ * 
+ * Permite seleccionar el destinatario, escribir un mensaje y adjuntar hasta 9 ítems del inventario.
+ */
+
 import com.eric.revill.ForgeRegistration;
 import com.eric.revill.fabric.fabric.api.screenhandler.v1.ExtendedScreenHandlerFactory;
 import com.eric.revill.fabric.fabric.api.screenhandler.v1.ExtendedScreenHandlerType;

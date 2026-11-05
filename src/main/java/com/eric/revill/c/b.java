@@ -6,10 +6,19 @@ import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
 
+/**
+ * Notificador de desconexión de jugadores para DEDSAFIO 4.
+ * 
+ * Cuando un jugador se desconecta del servidor, envía un mensaje con formato
+ * especial e icono de búnker al resto de jugadores conectados.
+ */
 public final class b {
    private b() {
    }
 
+   /**
+    * Registra el callback de desconexión del jugador en el servidor.
+    */
    public static void a() {
       ServerPlayConnectionEvents.DISCONNECT.register((Disconnect)(handler, server) -> {
          ServerPlayer disconnected = handler.getPlayer();

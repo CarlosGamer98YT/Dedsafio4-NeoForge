@@ -1,5 +1,12 @@
 package com.eric.revill.mixin;
 
+/**
+ * Inyección en el jugador {@link net.minecraft.world.entity.player.Player} para limitar la absorción.
+ * 
+ * Anula o restringe los corazones amarillos de absorción concedidos por manzanas doradas convencionales
+ * para preservar el balance estricto de salud de la serie.
+ */
+
 import com.eric.revill.g.a;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.player.Player;

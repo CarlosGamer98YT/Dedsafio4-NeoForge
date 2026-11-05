@@ -1,5 +1,14 @@
 package com.eric.revill.mixin;
 
+/**
+ * Inyección en el HUD principal del juego {@link net.minecraft.client.gui.Gui}.
+ * 
+ * Renderiza en pantalla:
+ * - El balance de Dedita del jugador.
+ * - La barra y cuenta atrás del Momento Revill.
+ * - Avisos de retos y alertas del desafío.
+ */
+
 import com.eric.revill.RevillClient;
 import com.eric.revill.l.g;
 import com.google.common.collect.Lists;

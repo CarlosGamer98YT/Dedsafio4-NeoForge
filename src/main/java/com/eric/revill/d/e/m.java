@@ -1,5 +1,12 @@
 package com.eric.revill.d.e;
 
+/**
+ * Pantalla de Redacción y Envío de Correo del Buzón.
+ * 
+ * Permite escribir el nombre del destinatario, un mensaje personalizado y adjuntar
+ * hasta 9 ítems de recompensa o regalo antes de enviar la carta.
+ */
+
 import com.eric.revill.fabric.api.EnvType;
 import com.eric.revill.fabric.api.Environment;
 import com.eric.revill.fabric.fabric.api.client.networking.v1.ClientPlayNetworking;

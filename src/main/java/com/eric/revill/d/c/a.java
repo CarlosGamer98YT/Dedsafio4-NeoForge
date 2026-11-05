@@ -1,5 +1,14 @@
 package com.eric.revill.d.c;
 
+/**
+ * Gestor de shaders y efectos de posprocesado de pantalla en cliente.
+ * 
+ * Permite cargar y alternar pipelines de renderizado personalizados para simular:
+ * - Efecto de pantalla roja al morir o recibir daño letal.
+ * - Distorsión de grieta dimensional durante eventos especiales.
+ * - Filtros de visión temática de DEDSAFIO 4.
+ */
+
 import com.eric.revill.fabric.api.EnvType;
 import com.eric.revill.fabric.api.Environment;
 import net.minecraft.client.Minecraft;

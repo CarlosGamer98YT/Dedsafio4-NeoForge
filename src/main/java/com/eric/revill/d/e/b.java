@@ -1,5 +1,12 @@
 package com.eric.revill.d.e;
 
+/**
+ * Pantalla de Depósito de Monedas en el Cajero Automático (ATM).
+ * 
+ * Permite al jugador colocar monedas físicas en los slots del cajero e ingresarlas a su cuenta,
+ * calculando automáticamente el total de Dedita a acreditar.
+ */
+
 import com.eric.revill.fabric.api.EnvType;
 import com.eric.revill.fabric.api.Environment;
 import net.minecraft.client.Minecraft;

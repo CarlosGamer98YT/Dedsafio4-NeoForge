@@ -1,5 +1,9 @@
 package com.eric.revill.o;
 
+/**
+ * Menú contenedor del Pedestal para depositar los ítems de misión.
+ */
+
 import com.eric.revill.ForgeRegistration;
 import com.eric.revill.fabric.fabric.api.screenhandler.v1.ExtendedScreenHandlerFactory;
 import com.eric.revill.fabric.fabric.api.screenhandler.v1.ExtendedScreenHandlerType;

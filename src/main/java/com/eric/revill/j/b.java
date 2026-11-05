@@ -1,5 +1,12 @@
 package com.eric.revill.j;
 
+/**
+ * Estado persistente del evento REVILL guardado en el mundo (SavedData).
+ * 
+ * Serializa en NBT si el evento está activo, los segundos restantes, el objetivo asignado,
+ * la configuración del búnker y los meteoritos activos.
+ */
+
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.level.saveddata.SavedData;

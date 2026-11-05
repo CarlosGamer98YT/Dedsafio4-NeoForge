@@ -1,5 +1,12 @@
 package com.eric.revill.mixin;
 
+/**
+ * Inyección en la cámara del jugador {@link net.minecraft.client.Camera}.
+ * 
+ * Permite bloquear, rotar o suavizar la perspectiva de la cámara durante cinemáticas especiales
+ * y durante la transición a modo espectador tras ser eliminado en un reto.
+ */
+
 import com.eric.revill.RevillClient;
 import com.eric.revill.fabric.api.EnvType;
 import com.eric.revill.fabric.api.Environment;

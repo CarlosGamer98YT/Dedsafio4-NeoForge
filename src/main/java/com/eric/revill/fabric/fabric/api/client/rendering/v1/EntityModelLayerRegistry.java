@@ -1,5 +1,12 @@
 package com.eric.revill.fabric.fabric.api.client.rendering.v1;
 
+/**
+ * Adaptador de registro de capas de modelos de entidad de Fabric API a NeoForge.
+ * 
+ * Registra definiciones de capas de modelos de entidades (como el modelo del Cajero Automático)
+ * en el evento {@link net.neoforged.neoforge.client.event.EntityRenderersEvent.RegisterLayerDefinitions}.
+ */
+
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import net.minecraft.client.model.geom.ModelLayerLocation;

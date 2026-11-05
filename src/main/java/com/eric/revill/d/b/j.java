@@ -1,5 +1,14 @@
 package com.eric.revill.d.b;
 
+/**
+ * Renderizador de la interfaz del "MOMENTO REVILL".
+ * 
+ * Superpone en la pantalla del jugador:
+ * - El temporizador gigante en cuenta atrás con advertencia en letras rojas.
+ * - La barra de objetivo (búnker, subir a Y=250 o descender a Y=-1).
+ * - El filtro de cielo rojizo apocalíptico y viñeta de peligro.
+ */
+
 import com.eric.revill.fabric.api.EnvType;
 import com.eric.revill.fabric.api.Environment;
 import net.minecraft.client.Minecraft;

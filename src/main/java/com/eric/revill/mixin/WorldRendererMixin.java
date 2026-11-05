@@ -1,5 +1,13 @@
 package com.eric.revill.mixin;
 
+/**
+ * Inyección en el renderizador del mundo {@link net.minecraft.client.renderer.LevelRenderer}.
+ * 
+ * Renderiza:
+ * - El cielo rojizo y las estelas de meteoritos cayendo durante el Momento Revill.
+ * - Los marcadores tridimensionales de Waypoints visibles a través del terreno.
+ */
+
 import com.eric.revill.RevillClient;
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.BufferBuilder;

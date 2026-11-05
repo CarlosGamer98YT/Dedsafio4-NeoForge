@@ -1,5 +1,11 @@
 package com.eric.revill.l;
 
+/**
+ * Ítem Corazón del Limbo.
+ * 
+ * Consumible que reinicia a cero todos los corazones rojos adicionales y restaura la vida al máximo base.
+ */
+
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;

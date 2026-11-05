@@ -1,5 +1,12 @@
 package com.eric.revill.d.e;
 
+/**
+ * Pantalla Principal de Navegación del Cajero Automático (ATM).
+ * 
+ * Muestra el menú de bienvenida con botones de acceso rápido para "Ingresar monedas",
+ * "Retirar saldo" y consultar el balance actual del jugador.
+ */
+
 import com.eric.revill.fabric.api.EnvType;
 import com.eric.revill.fabric.api.Environment;
 import com.eric.revill.fabric.fabric.api.client.networking.v1.ClientPlayNetworking;

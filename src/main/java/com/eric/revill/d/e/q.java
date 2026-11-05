@@ -1,5 +1,12 @@
 package com.eric.revill.d.e;
 
+/**
+ * Gestor y despachador de apertura de pantallas en el cliente.
+ * 
+ * Conecta los identificadores de paquetes de red recibidos del servidor con
+ * la instanciación de las pantallas correspondientes en {@link net.minecraft.client.Minecraft}.
+ */
+
 import com.eric.revill.fabric.api.EnvType;
 import com.eric.revill.fabric.api.Environment;
 import net.minecraft.client.gui.screens.Screen;

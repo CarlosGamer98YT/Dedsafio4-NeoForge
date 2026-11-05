@@ -1,5 +1,9 @@
 package com.eric.revill.m;
 
+/**
+ * Registro de bloques e ítems de bloque para el Buzón.
+ */
+
 import com.eric.revill.ForgeRegistration;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;

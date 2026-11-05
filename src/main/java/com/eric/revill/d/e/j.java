@@ -1,5 +1,12 @@
 package com.eric.revill.d.e;
 
+/**
+ * Pantalla de Cinemática de Muerte / Eliminación.
+ * 
+ * Reproduce una secuencia visual dramática antes de cambiar al jugador al modo espectador,
+ * informando la causa de su eliminación del desafío.
+ */
+
 import com.eric.revill.fabric.api.EnvType;
 import com.eric.revill.fabric.api.Environment;
 import net.minecraft.client.gui.GuiGraphics;

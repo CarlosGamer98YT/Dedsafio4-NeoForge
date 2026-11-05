@@ -1,5 +1,12 @@
 package com.eric.revill.fabric.fabric.api.networking.v1;
 
+/**
+ * Adaptador de red en el servidor de Fabric API a NeoForge.
+ * 
+ * Permite registrar manejadores de canales y emitir paquetes de red hacia jugadores conectados
+ * utilizando la infraestructura de {@link net.neoforged.neoforge.network.PacketDistributor}.
+ */
+
 import io.netty.buffer.Unpooled;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;

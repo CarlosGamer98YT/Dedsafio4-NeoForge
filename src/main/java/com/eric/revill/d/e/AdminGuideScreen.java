@@ -1,5 +1,12 @@
 package com.eric.revill.d.e;
 
+/**
+ * Pantalla de Guía Gráfica para Administradores de DEDSAFIO 4.
+ * 
+ * Muestra un manual paginado con navegación anterior/siguiente explicando todos los comandos,
+ * configuraciones del evento Revill, economía, buzones y gestión de gremios.
+ */
+
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.Button;
 import net.minecraft.client.gui.screens.Screen;

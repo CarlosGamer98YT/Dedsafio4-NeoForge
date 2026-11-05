@@ -1,5 +1,12 @@
 package com.eric.revill.fabric.fabric.api.event.lifecycle.v1;
 
+/**
+ * Adaptador de eventos del ciclo de vida del servidor de Fabric API a NeoForge.
+ * 
+ * Gestiona los callbacks de servidor iniciándose, iniciado, deteniéndose y detenido
+ * para guardar datos del evento Revill, economías y buzones.
+ */
+
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 import net.minecraft.server.MinecraftServer;

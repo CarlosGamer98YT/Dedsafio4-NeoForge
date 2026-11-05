@@ -1,5 +1,9 @@
 package com.eric.revill.m;
 
+/**
+ * Menú contenedor (ScreenHandler) para ver y reclamar cartas recibidas en el Buzón.
+ */
+
 import com.eric.revill.ForgeRegistration;
 import java.util.ArrayList;
 import java.util.List;

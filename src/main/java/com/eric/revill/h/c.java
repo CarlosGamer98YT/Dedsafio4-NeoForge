@@ -1,5 +1,14 @@
 package com.eric.revill.h;
 
+/**
+ * Enumerador de los tipos de moneda de DEDSAFIO 4.
+ * 
+ * Define los 3 tipos de Dedita:
+ * - AZUL: Valor base 1.
+ * - VERDE: Valor 100 (100 Dedita Azul equivalen a 1 Dedita Verde).
+ * - ROJA: Valor 10000.
+ */
+
 import com.eric.revill.l.g;
 import java.util.Locale;
 import java.util.function.Supplier;

@@ -1,5 +1,12 @@
 package com.eric.revill.d.b;
 
+/**
+ * Renderizador del HUD de Economía y Saldos de Dedita.
+ * 
+ * Dibuja en la esquina superior de la pantalla los balances actuales del jugador
+ * (Dedita Azul, Dedita Verde y Dedita Roja) junto a sus iconos representativos.
+ */
+
 import com.mojang.blaze3d.platform.InputConstants;
 import java.util.ArrayList;
 import java.util.List;

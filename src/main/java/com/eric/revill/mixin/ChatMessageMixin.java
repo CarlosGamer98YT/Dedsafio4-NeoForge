@@ -1,5 +1,12 @@
 package com.eric.revill.mixin;
 
+/**
+ * Inyección en la difusión de mensajes de chat {@link net.minecraft.server.players.PlayerList}.
+ * 
+ * Intercepta los mensajes enviados al chat global para insertar distintivos de gremios,
+ * iconos de cabezas de jugadores y disparar la visualización de bocadillos de chat flotantes en 3D.
+ */
+
 import com.eric.revill.s.a;
 import net.minecraft.network.chat.PlayerChatMessage;
 import net.minecraft.network.chat.ChatType.Bound;

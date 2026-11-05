@@ -1,5 +1,11 @@
 package com.eric.revill.t;
 
+/**
+ * Gestor de Waypoints en el servidor.
+ * 
+ * Administra la creación, edición, borrado y persistencia de marcadores para los jugadores.
+ */
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
@@ -41,6 +47,7 @@ public final class b {
    private b() {
    }
 
+   /** Carga y sincroniza los waypoints persistentes desde SavedData al arrancar el servidor */
    public static void a(MinecraftServer server) {
       h.clear();
       j = server.overworld().getDataStorage().computeIfAbsent(WaypointState.FACTORY, "dedsafio4_waypoints");
@@ -56,6 +63,7 @@ public final class b {
       c(server);
    }
 
+   /** Registra o actualiza un waypoint individual y sincroniza los cambios */
    public static void a(MinecraftServer server, com.eric.revill.t.a waypoint) {
       if (waypoint != null) {
          com.eric.revill.t.a previous = g.get(waypoint.a());
@@ -70,6 +78,7 @@ public final class b {
       }
    }
 
+   /** Actualiza en bloque la lista de waypoints dinámicos (p. ej., marcas compartidas de gremios) */
    public static void a(MinecraftServer server, List<com.eric.revill.t.a> waypoints) {
       if (server != null) {
          LinkedHashMap<String, com.eric.revill.t.a> replacements = new LinkedHashMap<>();
@@ -111,6 +120,7 @@ public final class b {
          && first.f().equals(second.f());
    }
 
+   /** Elimina un waypoint por su identificador único o nombre descriptivo */
    public static void a(MinecraftServer server, String idOrName) {
       if (idOrName != null && !idOrName.isBlank()) {
          com.eric.revill.t.a removed = g.remove(idOrName);
@@ -138,6 +148,7 @@ public final class b {
       }
    }
 
+   /** Mantiene cargados los chunks donde existen waypoints activos en el servidor */
    public static void b(MinecraftServer server) {
       if (server != null) {
          HashSet<b.a> waypointChunks = new HashSet<>();
@@ -275,11 +286,13 @@ public final class b {
       return Collections.unmodifiableList(new ArrayList<>(g.values()));
    }
 
+   /** Crea o actualiza el marcador especial de Waypoint del Búnker para el Momento Revill */
    public static void a(MinecraftServer server, BlockPos pos, String dimension) {
       com.eric.revill.t.a bunkerWp = new com.eric.revill.t.a("bunker", "BÚNKER", pos, "bunker", -56798, dimension);
       a(server, bunkerWp);
    }
 
+   /** Sincroniza la lista de waypoints con un jugador conectado */
    public static void a(ServerPlayer player) {
       if (player != null) {
          FriendlyByteBuf buf = d();
@@ -287,6 +300,7 @@ public final class b {
       }
    }
 
+   /** Difunde a todos los jugadores conectados la lista de waypoints combinada */
    public static void c(MinecraftServer server) {
       if (server != null) {
          FriendlyByteBuf buf = d();

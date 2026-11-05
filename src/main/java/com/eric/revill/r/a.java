@@ -1,5 +1,9 @@
 package com.eric.revill.r;
 
+/**
+ * Registro de recetas y fórmulas de fabricación de DEDSAFIO 4.
+ */
+
 import com.eric.revill.ForgeRegistration;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;

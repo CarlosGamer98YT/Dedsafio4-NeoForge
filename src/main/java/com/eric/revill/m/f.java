@@ -1,5 +1,12 @@
 package com.eric.revill.m;
 
+/**
+ * Bloque físico del Buzón (MailboxBlock).
+ * 
+ * Bloque con dirección horizontal y colisión personalizada donde los jugadores
+ * interactúan para enviar o consultar su correo.
+ */
+
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerPlayer;

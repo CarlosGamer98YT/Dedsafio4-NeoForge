@@ -65,26 +65,61 @@ import net.neoforged.neoforge.network.registration.PayloadRegistrar;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * Clase principal del mod DEDSAFIO 4 Mechanics para Minecraft 1.21.1 en NeoForge.
+ * 
+ * Gestiona el ciclo de vida del mod, el registro de eventos en el ModBus y el GameBus,
+ * la inicialización de subsistemas (economía, retos, misiones, waypoints, buzón,
+ * evento REVILL) y la sincronización de paquetes de red cliente-servidor.
+ */
 @Mod("dedsafio_4_mechanics")
 public class RevillMod {
+   /** ID del mod. */
    public static final String a = "dedsafio-4-mechanics";
+
+   /** Logger para el registro de mensajes en consola. */
    public static final Logger b = LoggerFactory.getLogger("dedsafio-4-mechanics");
+
+   /** Configuración cargada desde config/revill.json. */
    public static final a c = com.eric.revill.f.a.a();
+
+   /** Indica si la cinemática o secuencia de Fusión está activa en el servidor. */
    public static boolean d = false;
 
+   /**
+    * Constructor principal del mod invocado por el cargador de NeoForge.
+    * 
+    * @param modEventBus Bus de eventos de ciclo de vida del mod (ModBus).
+    * @param modContainer Contenedor de metadatos del mod.
+    */
    public RevillMod(IEventBus modEventBus, ModContainer modContainer) {
+      // 1. Registro de bloques, ítems, menús y pestañas
       modEventBus.addListener(ForgeRegistration::onRegister);
+      // 2. Registro de atributos de entidades personalizadas (ej. Cajero Automático)
       modEventBus.addListener(com.eric.revill.i.b::registerAttributes);
+      // 3. Registro de canales de red (Payloads)
       modEventBus.addListener(this::registerPayloads);
+      // 4. Registro de ítems en pestañas creativas (con prevención de duplicados)
       modEventBus.addListener(this::onBuildCreativeTabs);
+      // 5. Registro de entidades
       com.eric.revill.i.b.register(modEventBus);
+
+      // 6. Inicializar lógica interna del mod común (servidor y cliente)
       this.onInitialize();
+
+      // 7. Registrar listeners del bus del juego (eventos de tick, daño, chat, etc.)
       NeoForge.EVENT_BUS.register(this);
+
+      // 8. Inicialización específica del cliente si aplica
       if (FMLEnvironment.dist == Dist.CLIENT) {
          RevillClient.onInitializeClient(modEventBus);
       }
    }
 
+   /**
+    * Registra el payload de red bidireccional de NeoForge 1.21.1
+    * para interconectar los canales de red estilo Fabric con el sistema de paquetes de red de NeoForge.
+    */
    private void registerPayloads(RegisterPayloadHandlersEvent event) {
       PayloadRegistrar registrar = event.registrar("1").optional();
       registrar.playBidirectional(
@@ -106,51 +141,73 @@ public class RevillMod {
       );
    }
 
+   /**
+    * Inicializa todos los subsistemas del mod (recetas, sonidos, bloques, ítems,
+    * economía, retos diarios, eventos de ciclo de vida, paquetes de red y persistencia).
+    */
    public void onInitialize() {
       b.info("Iniciando DEDSAFIO 4 Mechanics para Minecraft 1.21.1 NeoForge");
-      com.eric.revill.r.a.a();
-      com.eric.revill.h.a.a();
-      h.a();
-      e.a();
-      com.eric.revill.m.c.b();
-      com.eric.revill.m.b.b();
-      com.eric.revill.a.a.a();
-      g.a();
-      com.eric.revill.g.c.a();
-      com.eric.revill.h.d.a();
-      com.eric.revill.m.e.a();
-      com.eric.revill.o.h.a();
-      com.eric.revill.o.c.a();
-      com.eric.revill.k.b.a();
-      com.eric.revill.c.b.a();
-      com.eric.revill.s.a.a();
+
+      // Inicialización de subsistemas individuales
+      com.eric.revill.r.a.a(); // Recetas de crafteo
+      com.eric.revill.h.a.a(); // Menú del Cajero Automático
+      h.a();                   // Bloques y BlockEntities del Buzón
+      e.a();                   // Bloque Pedestal de Desafíos Diarios
+      com.eric.revill.m.c.b(); // Menú de lectura de cartas del Buzón
+      com.eric.revill.m.b.b(); // Menú de envío de cartas del Buzón
+      com.eric.revill.a.a.a(); // Menú de la Mochila Portátil (Ender Bag)
+      g.a();                   // Registro de ítems y pestaña creativa
+      com.eric.revill.g.c.a(); // Registro del catálogo de retos de dificultad
+      com.eric.revill.h.d.a(); // Canales de sonido
+      com.eric.revill.m.e.a(); // Canales de red del buzón
+      com.eric.revill.o.h.a(); // Canales de red de sincronización de misiones
+      com.eric.revill.o.c.a(); // Canales de red de pedestales
+      com.eric.revill.k.b.a(); // Canales de red de gremios / clanes
+      com.eric.revill.c.b.a(); // Notificador de desconexión de jugadores
+      com.eric.revill.s.a.a(); // Sistema de globos de texto flotantes sobre jugadores
+
+      // Listener de muerte de entidades (actualiza progreso de misiones)
       ServerLivingEntityEvents.AFTER_DEATH.register((AfterDeath)(entity, source) -> {
          if (source.getEntity() instanceof ServerPlayer player) {
             com.eric.revill.o.g.a(player, entity);
          }
       });
+
+      // Listener de rotura de bloques (actualiza misiones de minería)
       PlayerBlockBreakEvents.AFTER.register((After)(world, player, pos, state, blockEntity) -> com.eric.revill.o.g.a(player, state.getBlock()));
+
+      // Registro de comandos /dedsafio4, /revill y /fusion
       CommandRegistrationCallback.EVENT.register((CommandRegistrationCallback)(dispatcher, registryAccess, environment) -> {
-         com.eric.revill.e.c.a(dispatcher);
-         com.eric.revill.e.a.a(dispatcher);
-         com.eric.revill.e.b.a(dispatcher);
+         com.eric.revill.e.c.a(dispatcher); // /revill
+         com.eric.revill.e.a.a(dispatcher); // /dedsafio4
+         com.eric.revill.e.b.a(dispatcher); // /fusion
       });
+
+      // Evento de servidor iniciado: carga estados guardados (REVILL, misiones, waypoints, gremios)
       ServerLifecycleEvents.SERVER_STARTED.register((ServerStarted)server -> {
-         com.eric.revill.j.a.a.d(server);
-         com.eric.revill.o.g.a(server);
-         com.eric.revill.t.b.a(server);
-         com.eric.revill.k.a.a(server);
+         com.eric.revill.j.a.a.d(server); // Estado del evento REVILL
+         com.eric.revill.o.g.a(server);    // Carga de misiones diarias
+         com.eric.revill.t.b.a(server);    // Carga de waypoints
+         com.eric.revill.k.a.a(server);    // Carga de gremios
       });
+
+      // Evento de servidor deteniéndose: guarda estados pendientes
       ServerLifecycleEvents.SERVER_STOPPING.register((ServerStopping)server -> com.eric.revill.j.a.a.f(server));
+
+      // Evento de fin de tick del servidor: actualiza temporizadores de REVILL y retos diarios
       ServerTickEvents.END_SERVER_TICK.register((EndTick)server -> {
-         com.eric.revill.j.a.a.c(server);
-         com.eric.revill.g.a.d(server);
+         com.eric.revill.j.a.a.c(server); // Actualiza cuenta atrás y tareas de REVILL
+         com.eric.revill.g.a.d(server);    // Actualiza efectos de los retos activos
       });
+
+      // Evento al cargar entidad: aplica efectos especiales de retos (ej. Creepers electrificados en Día 1)
       ServerEntityEvents.ENTITY_LOAD.register((Load)(entity, world) -> {
          if (entity instanceof Creeper creeper && com.eric.revill.g.a.a("dia1_creepers_electricos")) {
             creeper.getEntityData().set(CreeperEntityChargedAccessor.dedsafio4$getChargedData(), true);
          }
       });
+
+      // Evento de permiso de muerte: permite o bloquea la muerte del jugador (gestión de vidas y modo espectador)
       ServerLivingEntityEvents.ALLOW_DEATH.register((AllowDeath)(entity, source, damageAmount) -> {
          if (entity instanceof ServerPlayer player) {
             boolean bypasses = source.is(DamageTypeTags.BYPASSES_INVULNERABILITY);
@@ -159,6 +216,8 @@ public class RevillMod {
             return true;
          }
       });
+
+      // Receptores de red del servidor para la gestión de configuración y retos
       ServerPlayNetworking.registerGlobalReceiver(com.eric.revill.g.b.b, (server, player, handler, buf, responseSender) -> {
          if (!player.hasPermissions(4)) {
             player.displayClientMessage(Component.literal("Necesitas ser operador para cambiar la configuración de DEDSAFIO 4."), false);
@@ -167,6 +226,8 @@ public class RevillMod {
             server.execute(() -> com.eric.revill.g.a.a(server, changeId));
          }
       });
+
+      // Habilitar o deshabilitar reto específico
       ServerPlayNetworking.registerGlobalReceiver(com.eric.revill.g.b.c, (server, player, handler, buf, responseSender) -> {
          if (!player.hasPermissions(4)) {
             player.displayClientMessage(Component.literal("Necesitas ser operador para cambiar la configuración de DEDSAFIO 4."), false);
@@ -176,6 +237,8 @@ public class RevillMod {
             server.execute(() -> com.eric.revill.g.a.b(server, changeId, enabled));
          }
       });
+
+      // Iniciar ruleta personalizada con color y mensaje
       ServerPlayNetworking.registerGlobalReceiver(com.eric.revill.g.b.e, (server, player, handler, buf, responseSender) -> {
          if (!player.hasPermissions(4)) {
             player.displayClientMessage(Component.literal("Necesitas ser operador para iniciar una ruleta personalizada."), false);
@@ -185,12 +248,16 @@ public class RevillMod {
             server.execute(() -> com.eric.revill.g.a.a(server, color, message));
          }
       });
+
+      // Sincronización de animaciones de Nutria
       ServerPlayNetworking.registerGlobalReceiver(
          com.eric.revill.p.a.g, (server, player, handler, buf, responseSender) -> server.execute(() -> com.eric.revill.g.a.f(server))
       );
       ServerPlayNetworking.registerGlobalReceiver(
          com.eric.revill.p.a.i, (server, player, handler, buf, responseSender) -> server.execute(() -> com.eric.revill.g.a.g(server))
       );
+
+      // Configurar y lanzar eventos REVILL
       ServerPlayNetworking.registerGlobalReceiver(com.eric.revill.g.b.f, (server, player, handler, buf, responseSender) -> {
          if (!player.hasPermissions(4)) {
             player.displayClientMessage(Component.literal("Necesitas ser operador para configurar los eventos REVILL."), false);
@@ -203,6 +270,8 @@ public class RevillMod {
             server.execute(() -> com.eric.revill.j.a.a.a(server, taskId, message, color, durationSeconds, musicEnabled));
          }
       });
+
+      // Detener eventos REVILL
       ServerPlayNetworking.registerGlobalReceiver(com.eric.revill.g.b.g, (server, player, handler, buf, responseSender) -> {
          if (!player.hasPermissions(4)) {
             player.displayClientMessage(Component.literal("Necesitas ser operador para detener REVILL."), false);
@@ -210,6 +279,8 @@ public class RevillMod {
             server.execute(() -> com.eric.revill.j.a.a.a(server, true));
          }
       });
+
+      // Acciones directas de control de REVILL
       ServerPlayNetworking.registerGlobalReceiver(com.eric.revill.g.b.h, (server, player, handler, buf, responseSender) -> {
          int action = buf.readVarInt();
          if (!player.hasPermissions(4)) {
@@ -220,6 +291,8 @@ public class RevillMod {
             player.displayClientMessage(Component.literal("Acción de REVILL no válida."), false);
          }
       });
+
+      // Gestión de Waypoints (Añadir)
       ServerPlayNetworking.registerGlobalReceiver(com.eric.revill.t.b.b, (server, player, handler, buf, responseSender) -> {
          String name = buf.readUtf();
          String icon = buf.readUtf();
@@ -230,6 +303,8 @@ public class RevillMod {
             player.displayClientMessage(Component.literal("Waypoint '" + name + "' registrado."), false);
          });
       });
+
+      // Gestión de Waypoints (Eliminar)
       ServerPlayNetworking.registerGlobalReceiver(com.eric.revill.t.b.c, (server, player, handler, buf, responseSender) -> {
          String id = buf.readUtf();
          server.execute(() -> {
@@ -237,6 +312,8 @@ public class RevillMod {
             player.displayClientMessage(Component.literal("Waypoint eliminado."), false);
          });
       });
+
+      // Gestión de Waypoints (Actualizar)
       ServerPlayNetworking.registerGlobalReceiver(com.eric.revill.t.b.d, (server, player, handler, buf, responseSender) -> {
          String id = buf.readUtf();
          String name = buf.readUtf();
@@ -250,6 +327,8 @@ public class RevillMod {
             player.displayClientMessage(Component.literal("Waypoint '" + name + "' actualizado."), false);
          });
       });
+
+      // Evento de entrada de jugador al servidor: sincroniza waypoints, retos, saldos y otorga la guía de administración
       ServerPlayConnectionEvents.JOIN.register((Join)(handler, sender, server) -> {
          com.eric.revill.t.b.a(handler.getPlayer());
          com.eric.revill.g.a.a(handler.getPlayer());
@@ -257,8 +336,13 @@ public class RevillMod {
          com.eric.revill.o.g.a(server, handler.getPlayer());
          AdminGuideItem.grantOnLogin(handler.getPlayer());
       });
+
       b.info("DEDSAFIO 4 Mechanics inicializado correctamente.");
    }
+
+   // =========================================================================
+   // EVENT LISTENERS DE LA INSTANCIA (NeoForge.EVENT_BUS)
+   // =========================================================================
 
    @SubscribeEvent
    public void onServerTick(ServerTickEvent.Post event) {
@@ -342,7 +426,6 @@ public class RevillMod {
    @SubscribeEvent
    public void onUseEntity(PlayerInteractEvent.EntityInteract event) {
       for (var l : UseEntityCallback.EVENT.getListeners()) {
-         // Create simple BlockHitResult / null or check
          InteractionResult res = l.interact(event.getEntity(), event.getLevel(), event.getHand(), event.getTarget(), null);
          if (res == InteractionResult.FAIL || res == InteractionResult.CONSUME || res == InteractionResult.SUCCESS) {
             event.setCanceled(true);
@@ -376,6 +459,11 @@ public class RevillMod {
       }
    }
 
+   /**
+    * Listener registrado en el bus del mod (ModBus) para añadir los ítems del mod
+    * a las pestañas creativas correspondientes, verificando que no existan duplicados
+    * para evitar la excepción IllegalArgumentException de NeoForge.
+    */
    public void onBuildCreativeTabs(BuildCreativeModeTabContentsEvent event) {
       var modifiers = ItemGroupEvents.getModifiers(event.getTabKey());
       if (modifiers != null) {

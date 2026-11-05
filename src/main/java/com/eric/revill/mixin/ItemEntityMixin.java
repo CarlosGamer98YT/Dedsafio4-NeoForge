@@ -1,5 +1,12 @@
 package com.eric.revill.mixin;
 
+/**
+ * Inyección en las entidades de ítems en el suelo {@link net.minecraft.world.entity.item.ItemEntity}.
+ * 
+ * Intercepta la recolección o destrucción de ítems especiales de DEDSAFIO 4 (monedas, cartas de buzón)
+ * para garantizar su seguridad y contabilización correcta en misiones.
+ */
+
 import com.eric.revill.o.g;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerLevel;

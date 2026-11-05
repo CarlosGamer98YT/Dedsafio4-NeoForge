@@ -1,5 +1,9 @@
 package com.eric.revill.l;
 
+/**
+ * Utilidades complementarias para el manejo de ítems e inventarios.
+ */
+
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;

@@ -1,5 +1,13 @@
 package com.eric.revill.h;
 
+/**
+ * Gestor de economía y saldos persistentes en el servidor.
+ * 
+ * Almacena los balances de Dedita Azul, Dedita Roja y Dedita Verde de cada jugador
+ * en los datos guardados del mundo (SavedData bajo la clave "dedsafio4_economy").
+ * Maneja depósitos, retiros y sincronización hacia el cliente.
+ */
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
@@ -15,15 +23,18 @@ public final class b {
    private b() {
    }
 
+   /** Obtiene la cantidad de monedas del tipo indicado que posee un jugador */
    public static int a(MinecraftServer server, UUID playerId, c type) {
       return a(server).a(playerId, type);
    }
 
+   /** Obtiene el array de saldos del jugador: [0] = Azul, [1] = Verde, [2] = Roja */
    public static int[] a(MinecraftServer server, UUID playerId) {
       b.EconomyState state = a(server);
       return new int[]{state.a(playerId, c.a), state.a(playerId, c.b), state.a(playerId, c.c)};
    }
 
+   /** Deposita una cantidad positiva de monedas de un tipo en la cuenta del jugador */
    public static void a(MinecraftServer server, UUID playerId, c type, int amount) {
       if (amount > 0) {
          b.EconomyState state = a(server);
@@ -33,6 +44,7 @@ public final class b {
       }
    }
 
+   /** Retira una cantidad de monedas si el jugador tiene saldo suficiente; devuelve true si tuvo éxito */
    public static boolean b(MinecraftServer server, UUID playerId, c type, int amount) {
       if (amount <= 0) {
          return false;
@@ -50,6 +62,7 @@ public final class b {
       }
    }
 
+   /** Retira simultáneamente cantidades de varios tipos de monedas si todos los fondos son suficientes */
    public static boolean a(MinecraftServer server, UUID playerId, int[] amounts) {
       if (amounts.length != c.a().length) {
          return false;
@@ -73,6 +86,7 @@ public final class b {
       }
    }
 
+   /** Establece directamente el saldo de un jugador para un tipo de moneda (comando admin) */
    public static void c(MinecraftServer server, UUID playerId, c type, int amount) {
       b.EconomyState state = a(server);
       state.a(playerId, type, Math.max(0, amount));
@@ -80,10 +94,12 @@ public final class b {
       b(server, playerId);
    }
 
+   /** Sincroniza por paquete de red los saldos bancarios actuales hacia el cliente del jugador */
    public static void a(ServerPlayer player) {
       d.a(player, a(player.getServer(), player.getUUID()));
    }
 
+   /** Notifica al jugador si está conectado para actualizar sus balances en pantalla */
    private static void b(MinecraftServer server, UUID playerId) {
       ServerPlayer player = server.getPlayerList().getPlayer(playerId);
       if (player != null) {
@@ -91,11 +107,15 @@ public final class b {
       }
    }
 
+   /** Obtiene o inicializa los datos de economía guardados del Overworld */
    private static b.EconomyState a(MinecraftServer server) {
       ServerLevel world = server.overworld();
       return world.getDataStorage().computeIfAbsent(b.EconomyState.FACTORY, "dedsafio4_economy");
    }
 
+   /**
+    * Estructura persistente SavedData de Minecraft que serializa los saldos en NBT.
+    */
    private static final class EconomyState extends SavedData {
       public static final SavedData.Factory<b.EconomyState> FACTORY = new SavedData.Factory<>(b.EconomyState::new, b.EconomyState::a);
       private final Map<UUID, int[]> a = new HashMap<>();

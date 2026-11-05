@@ -1,5 +1,12 @@
 package com.eric.revill.d.b;
 
+/**
+ * Renderizador de secuencias cinemáticas de animación Zenith.
+ * 
+ * Procesa y reproduce cuadros por segundo de la secuencia de imágenes de fondo
+ * situadas en {@code textures/environment/zenith/} para efectos climáticos o dimensionales.
+ */
+
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.BufferBuilder;
 import com.mojang.blaze3d.vertex.BufferUploader;

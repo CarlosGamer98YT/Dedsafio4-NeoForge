@@ -1,5 +1,11 @@
 package com.eric.revill.fabric.fabric.api.event.lifecycle.v1;
 
+/**
+ * Adaptador de eventos de tick del servidor de Fabric API a NeoForge.
+ * 
+ * Ejecuta periódicamente la lógica de cuenta atrás del Momento Revill, meteoritos y misiones.
+ */
+
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 import net.minecraft.server.MinecraftServer;

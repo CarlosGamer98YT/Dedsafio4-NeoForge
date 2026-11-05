@@ -1,5 +1,12 @@
 package com.eric.revill.d.d;
 
+/**
+ * Renderizador 3D de bocadillos de chat flotantes sobre la cabeza de los jugadores.
+ * 
+ * Captura los mensajes de chat enviados por jugadores cercanos y los dibuja
+ * dentro de un globo estilizado ({@code textures/gui/bocadilloeon.png}) encima del jugador.
+ */
+
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.mojang.math.Axis;

@@ -1,5 +1,12 @@
 package com.eric.revill.d.e;
 
+/**
+ * Pantalla contenedora de la Mochila Portátil (Ender Bag).
+ * 
+ * Renderiza la interfaz de cuadrícula 3x9 de la mochila vinculada al contenedor
+ * {@link com.eric.revill.a.a}, permitiendo mover ítems entre inventarios.
+ */
+
 import com.eric.revill.fabric.api.EnvType;
 import com.eric.revill.fabric.api.Environment;
 import net.minecraft.client.gui.GuiGraphics;

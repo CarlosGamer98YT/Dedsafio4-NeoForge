@@ -1,5 +1,12 @@
 package com.eric.revill.d.b;
 
+/**
+ * Renderizador de la animación visual de Fusión / Transformación.
+ * 
+ * Proyecta una secuencia de texturas animadas en el centro de la pantalla al ejecutarse
+ * el comando {@code /fusion} o activarse el evento correspondiente.
+ */
+
 import com.mojang.blaze3d.platform.NativeImage;
 import com.mojang.blaze3d.platform.NativeImage.Format;
 import com.mojang.blaze3d.systems.RenderSystem;

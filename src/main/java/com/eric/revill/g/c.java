@@ -1,5 +1,16 @@
 package com.eric.revill.g;
 
+/**
+ * Lógica de ejecución en el mundo de los retos de dificultad de DEDSAFIO 4.
+ * 
+ * Contiene los listeners de eventos para aplicar mecánicas específicas según el reto activo:
+ * - Spawn de creepers electrificados.
+ * - Squeletos con flechas con efectos.
+ * - Deshabilitación de regeneración o daño ambiental.
+ * - Prohibición de equipar armadura de netherite.
+ * - Interacciones con bloques y entidades restringidas.
+ */
+
 import java.util.ArrayList;
 import java.util.Map;
 import java.util.WeakHashMap;

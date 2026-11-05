@@ -1,5 +1,13 @@
 package com.eric.revill.d.a;
 
+/**
+ * Gestor de efectos de audio y reproducción de sonidos en el cliente.
+ * 
+ * Controla la reproducción de efectos sonoros personalizados como el tintineo de monedas
+ * en el cajero automático, la alarma de tensión durante el Momento Revill, el giro de la ruleta
+ * y los efectos de confirmación en las interfaces de usuario.
+ */
+
 import com.eric.revill.d.e.i;
 import com.eric.revill.fabric.api.EnvType;
 import com.eric.revill.fabric.api.Environment;

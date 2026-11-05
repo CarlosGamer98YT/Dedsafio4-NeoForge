@@ -1,5 +1,11 @@
 package com.eric.revill.l;
 
+/**
+ * Ítem Corazón Dorado.
+ * 
+ * Al consumirse, otorga corazones adicionales de absorción temporal durante 3 minutos (3600 ticks).
+ */
+
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;

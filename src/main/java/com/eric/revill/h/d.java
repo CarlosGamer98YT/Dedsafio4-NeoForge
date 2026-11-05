@@ -1,5 +1,12 @@
 package com.eric.revill.h;
 
+/**
+ * Canales y manejadores de red para el Cajero Automático (ATM).
+ * 
+ * Comunica las acciones de apertura de cajero, depósito de monedas físicas,
+ * retiro de saldo en billetes/monedas y sincronización de balances hacia el HUD del cliente.
+ */
+
 import com.eric.revill.fabric.fabric.api.networking.v1.PacketByteBufs;
 import com.eric.revill.fabric.fabric.api.networking.v1.ServerPlayNetworking;
 import net.minecraft.network.FriendlyByteBuf;

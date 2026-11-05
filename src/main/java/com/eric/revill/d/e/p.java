@@ -1,5 +1,12 @@
 package com.eric.revill.d.e;
 
+/**
+ * Pantalla de Clasificación y Avance de Misiones Diarias.
+ * 
+ * Muestra el progreso de cada jugador en las misiones del día (bloques minados,
+ * monstruos eliminados) y el ranking de participantes.
+ */
+
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import java.util.ArrayList;

@@ -1,5 +1,13 @@
 package com.eric.revill.h;
 
+/**
+ * Menú contenedor (ScreenHandler) para el Cajero Automático (ATM).
+ * 
+ * Proporciona una cuadrícula de 9 casillas (3x3) donde los jugadores depositan
+ * monedas físicas (Dedita Azul, Roja o Verde). Al confirmar, las monedas se convierten
+ * en saldo virtual del jugador en el servidor.
+ */
+
 import com.eric.revill.ForgeRegistration;
 import com.eric.revill.fabric.fabric.api.screenhandler.v1.ExtendedScreenHandlerFactory;
 import com.eric.revill.fabric.fabric.api.screenhandler.v1.ExtendedScreenHandlerType;

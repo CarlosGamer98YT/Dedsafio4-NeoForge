@@ -1,5 +1,12 @@
 package com.eric.revill.mixin;
 
+/**
+ * Inyección en la clase base {@link net.minecraft.world.level.block.Block} para capturar la rotura de bloques.
+ * 
+ * Rastrea la destrucción de bloques por parte de los jugadores para registrar el progreso
+ * de las misiones diarias (por ejemplo, minar diamantes, obsidiana o madera).
+ */
+
 import com.eric.revill.g.a;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;

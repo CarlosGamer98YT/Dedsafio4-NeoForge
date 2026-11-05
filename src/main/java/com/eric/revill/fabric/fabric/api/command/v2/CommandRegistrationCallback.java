@@ -1,5 +1,12 @@
 package com.eric.revill.fabric.fabric.api.command.v2;
 
+/**
+ * Callback de Fabric API para el registro de comandos del servidor.
+ * 
+ * Conectado con el evento {@link net.neoforged.neoforge.event.RegisterCommandsEvent} de NeoForge
+ * para registrar comandos como {@code /dedsafio4}, {@code /revill} y {@code /fusion}.
+ */
+
 import com.mojang.brigadier.CommandDispatcher;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;

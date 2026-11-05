@@ -1,5 +1,12 @@
 package com.eric.revill.mixin;
 
+/**
+ * Inyección en el menú principal de Minecraft {@link net.minecraft.client.gui.screens.TitleScreen}.
+ * 
+ * Renderiza el fondo oficial temático de DEDSAFIO 4 y muestra el botón de la Guía de Administrador
+ * y créditos de EricReck.
+ */
+
 import com.eric.revill.d.b.l;
 import com.eric.revill.d.b.m;
 import com.eric.revill.fabric.api.EnvType;

@@ -1,5 +1,12 @@
 package com.eric.revill.d.a;
 
+/**
+ * Controlador de animaciones y transiciones de interfaz en cliente.
+ * 
+ * Calcula curvas de interpolación suave (fade-in, fade-out, traslaciones elásticas)
+ * empleadas en el despliegue de ventanas modales, diálogos y notificaciones emergentes.
+ */
+
 import com.eric.revill.d.e.p;
 import com.eric.revill.o.h;
 import com.google.gson.JsonObject;

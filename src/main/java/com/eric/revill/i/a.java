@@ -1,5 +1,13 @@
 package com.eric.revill.i;
 
+/**
+ * Entidad viva estática del Cajero Automático (ATM).
+ * 
+ * Representa la máquina de cajero en el mundo con física fija (sin gravedad).
+ * Al hacer clic derecho, orienta su rotación hacia el jugador y abre el menú
+ * interactivo del banco para gestionar el saldo de Dedita.
+ */
+
 import com.eric.revill.h.d;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.server.level.ServerPlayer;

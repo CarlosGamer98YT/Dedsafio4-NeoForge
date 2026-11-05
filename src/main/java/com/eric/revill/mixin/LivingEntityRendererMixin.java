@@ -1,5 +1,12 @@
 package com.eric.revill.mixin;
 
+/**
+ * Inyección en el renderizador de entidades vivas {@link net.minecraft.client.renderer.entity.EntityRenderer}.
+ * 
+ * Dibuja bocadillos de chat flotantes en 3D y emblemas de hermandades/gremios
+ * directamente sobre la cabeza de los jugadores en el mundo.
+ */
+
 import com.eric.revill.d.a.b;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.eric.revill.fabric.api.EnvType;

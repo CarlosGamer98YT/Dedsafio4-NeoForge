@@ -1,5 +1,12 @@
 package com.eric.revill.l;
 
+/**
+ * Ítem de la Mochila Portátil (Ender Bag).
+ * 
+ * Al hacer clic derecho, abre una interfaz de almacenamiento portátil de 27 casillas
+ * que viaja con el jugador dentro del ítem.
+ */
+
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;

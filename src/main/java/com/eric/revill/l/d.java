@@ -1,5 +1,11 @@
 package com.eric.revill.l;
 
+/**
+ * Ítem Corazón Rojo.
+ * 
+ * Al consumirse, incrementa de manera permanente la salud máxima del jugador (+2 HP por corazón).
+ */
+
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;

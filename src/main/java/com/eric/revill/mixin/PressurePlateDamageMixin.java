@@ -1,5 +1,12 @@
 package com.eric.revill.mixin;
 
+/**
+ * Inyección en las placas de presión {@link net.minecraft.world.level.block.BasePressurePlateBlock}.
+ * 
+ * En días de dificultad con trampa de placas de presión activa, al pisar una placa el jugador
+ * recibe daño directo o sufre una explosión instantánea.
+ */
+
 import com.eric.revill.g.a;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.Entity;

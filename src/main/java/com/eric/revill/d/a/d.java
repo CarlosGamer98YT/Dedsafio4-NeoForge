@@ -1,5 +1,12 @@
 package com.eric.revill.d.a;
 
+/**
+ * Temporizador y gestor de ticks de cliente para animaciones.
+ * 
+ * Proporciona un contador de tiempo continuo sincronizado con el renderizado de Minecraft
+ * para coordinar efectos animados independientes de los ticks del servidor.
+ */
+
 import com.eric.revill.RevillClient;
 import com.eric.revill.RevillMod;
 import com.eric.revill.d.b.h;

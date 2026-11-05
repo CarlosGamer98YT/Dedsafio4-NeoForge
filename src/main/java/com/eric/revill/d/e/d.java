@@ -1,5 +1,12 @@
 package com.eric.revill.d.e;
 
+/**
+ * Pantalla de Retirada de Saldo del Cajero Automático (ATM).
+ * 
+ * Interfaz con botones interactivos para convertir saldo virtual en monedas físicas
+ * de Dedita Azul, Dedita Verde o Dedita Roja en el inventario del jugador.
+ */
+
 import com.eric.revill.fabric.api.EnvType;
 import com.eric.revill.fabric.api.Environment;
 import net.minecraft.client.gui.GuiGraphics;

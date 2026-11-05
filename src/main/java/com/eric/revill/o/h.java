@@ -1,5 +1,9 @@
 package com.eric.revill.o;
 
+/**
+ * Canales de red para la sincronización de misiones diarias hacia el cliente.
+ */
+
 import com.google.gson.JsonParser;
 import java.util.ArrayList;
 import java.util.UUID;

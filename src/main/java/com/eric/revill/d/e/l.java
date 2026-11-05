@@ -1,5 +1,12 @@
 package com.eric.revill.d.e;
 
+/**
+ * Pantalla de Catálogo de Ítems y Herramientas del Mod.
+ * 
+ * Ofrece un catálogo visual interactivo de los objetos de DEDSAFIO 4 (monedas, mochilas,
+ * buzones, corazones, palitomágico) con sus recetas y explicaciones de uso.
+ */
+
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;

@@ -1,5 +1,12 @@
 package com.eric.revill.d.b;
 
+/**
+ * Renderizador de créditos y marca de agua en pantalla.
+ * 
+ * Dibuja de manera no invasiva el texto de atribución oficial del mod ("Mod de Dedsafio4 por EricReck")
+ * en la esquina de la interfaz.
+ */
+
 import java.util.Objects;
 import com.eric.revill.fabric.api.EnvType;
 import com.eric.revill.fabric.api.Environment;

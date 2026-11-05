@@ -1,5 +1,19 @@
 package com.eric.revill.e;
 
+/**
+ * Árbol de comandos de operador: `/revill`
+ * 
+ * Alias administrativo simplificado que requiere nivel de operador 2 o superior.
+ * Contiene accesos directos a:
+ * - `/revill start`: Inicia el evento REVILL.
+ * - `/revill stop`: Detiene el evento activo.
+ * - `/revill status`: Muestra el estado del evento.
+ * - `/revill fusion [entrar|salir]`: Activa o desactiva la secuencia de Fusión.
+ * - `/revill bunker set|show|clear`: Configuración rápida del búnker.
+ * - `/revill meteorites on|off`: Control de meteoritos.
+ * - `/revill config`: Consulta de configuración.
+ */
+
 import com.eric.revill.RevillMod;
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.arguments.IntegerArgumentType;

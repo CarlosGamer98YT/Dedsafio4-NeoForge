@@ -1,5 +1,9 @@
 package com.eric.revill.j;
 
+/**
+ * Estado de actividad del evento REVILL (activo / inactivo).
+ */
+
 public enum d {
    a,
    b;

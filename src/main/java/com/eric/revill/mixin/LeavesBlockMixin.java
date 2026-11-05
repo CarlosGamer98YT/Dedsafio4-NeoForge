@@ -1,5 +1,12 @@
 package com.eric.revill.mixin;
 
+/**
+ * Inyección en el comportamiento de hojas de árboles {@link net.minecraft.world.level.block.Block}.
+ * 
+ * Registra la rotura o caída natural de hojas para misiones diarias y modifica
+ * la probabilidad de obtención de manzanas u objetos específicos.
+ */
+
 import com.eric.revill.g.a;
 import java.util.ArrayList;
 import java.util.List;

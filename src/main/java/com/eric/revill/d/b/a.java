@@ -1,5 +1,12 @@
 package com.eric.revill.d.b;
 
+/**
+ * Modelo 3D del Cajero Automático (ATM).
+ * 
+ * Define la estructura de cubos y rotaciones del modelo visual del cajero en el mundo,
+ * incluyendo su pantalla, teclado numérico y ranura de depósito de monedas.
+ */
+
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.eric.revill.fabric.api.EnvType;

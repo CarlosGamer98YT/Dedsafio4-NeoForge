@@ -1,5 +1,12 @@
 package com.eric.revill.d.e;
 
+/**
+ * Pantalla de Consulta de Cambios de Dificultad.
+ * 
+ * Presenta una lista desplazable con la descripción de todos los retos y reglas activas
+ * de cada día de la serie para que los jugadores puedan revisar las restricciones actuales.
+ */
+
 import java.util.ArrayList;
 import java.util.List;
 import com.eric.revill.fabric.api.EnvType;

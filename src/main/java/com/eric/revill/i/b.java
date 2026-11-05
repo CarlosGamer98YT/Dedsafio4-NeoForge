@@ -1,5 +1,13 @@
 package com.eric.revill.i;
 
+/**
+ * Registro de tipos de entidades de DEDSAFIO 4 para NeoForge.
+ * 
+ * Registra:
+ * - "cajero": Entidad Mob del Cajero Automático.
+ * - "waypoint_marker": Entidad invisible auxiliar usada como marcador de waypoints.
+ */
+
 import com.eric.revill.t.c;
 import java.util.function.Supplier;
 import net.minecraft.core.registries.Registries;

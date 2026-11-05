@@ -1,5 +1,12 @@
 package com.eric.revill.fabric.fabric.api.networking.v1;
 
+/**
+ * Contenedor de paquetes de red {@link net.minecraft.network.protocol.common.custom.CustomPacketPayload} para NeoForge.
+ * 
+ * Encapsula un canal identificado por {@link net.minecraft.resources.ResourceLocation} y un array de bytes
+ * de carga útil para comunicar el cliente y el servidor con total fidelidad a la arquitectura de paquetes de Fabric.
+ */
+
 import io.netty.buffer.ByteBuf;
 import net.minecraft.network.codec.ByteBufCodecs;
 import net.minecraft.network.codec.StreamCodec;

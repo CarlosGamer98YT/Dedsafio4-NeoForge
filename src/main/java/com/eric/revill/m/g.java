@@ -1,5 +1,9 @@
 package com.eric.revill.m;
 
+/**
+ * BlockEntity asociado al Buzón para gestionar la interacción en el mundo.
+ */
+
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;

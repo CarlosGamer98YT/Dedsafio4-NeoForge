@@ -1,5 +1,11 @@
 package com.eric.revill.m;
 
+/**
+ * Estructura de datos de un paquete o mensaje de correo del Buzón.
+ * 
+ * Contiene el UUID del remitente, nombre, mensaje de texto y la lista de ítems adjuntos.
+ */
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;

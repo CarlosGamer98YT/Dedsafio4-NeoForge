@@ -1,5 +1,13 @@
 package com.eric.revill.a;
 
+/**
+ * Menú contenedor (ScreenHandler) de la Mochila Portátil (Ender Bag).
+ * 
+ * Gestiona un inventario móvil de 27 casillas (3x9) serializado y guardado
+ * directamente en los DataComponents del ItemStack de la mochila. Previene
+ * anidar mochilas dentro de sí mismas mediante validación de slots.
+ */
+
 import com.eric.revill.ForgeRegistration;
 import com.eric.revill.l.g;
 import com.eric.revill.fabric.fabric.api.screenhandler.v1.ExtendedScreenHandlerFactory;

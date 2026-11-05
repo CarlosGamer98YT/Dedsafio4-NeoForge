@@ -1,5 +1,12 @@
 package com.eric.revill.d.e;
 
+/**
+ * Pantalla del Pedestal de Desafíos Diarios.
+ * 
+ * Muestra la interfaz donde los jugadores colocan los ítems solicitados por la misión diaria
+ * para entregarlos y reclamar la recompensa.
+ */
+
 import com.eric.revill.fabric.api.EnvType;
 import com.eric.revill.fabric.api.Environment;
 import com.eric.revill.fabric.fabric.api.client.networking.v1.ClientPlayNetworking;

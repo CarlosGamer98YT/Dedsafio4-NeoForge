@@ -1,5 +1,16 @@
 package com.eric.revill.j;
 
+/**
+ * Gestor principal del "MOMENTO REVILL".
+ * 
+ * Controla el ciclo de vida completo del evento:
+ * - Inicio del evento con cuenta atrás configurable (por defecto 10 minutos).
+ * - Selección de objetivo: llegar al búnker, subir a Y=250 o descender a Y=-1.
+ * - Activación de cielo rojo apocalíptico y música de tensión.
+ * - Generación de meteoritos cayendo del cielo.
+ * - Verificación final: quienes no hayan cumplido el objetivo son eliminados y pasan a modo espectador.
+ */
+
 import com.eric.revill.RevillMod;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -13,36 +24,63 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.level.storage.DimensionDataStorage;
 
 public class a {
+   /** Instancia singleton del gestor del Momento Revill */
    public static final a a = new a();
+   /** Configuración deserializada desde revill.json */
    private final com.eric.revill.f.a b = RevillMod.c;
+   /** Gestor y generador de meteoritos en el Overworld */
    private final com.eric.revill.n.b c = new com.eric.revill.n.b();
+   /** Conjunto de jugadores monitoreados durante el evento */
    private final Set<ServerPlayer> d = new HashSet<>();
+   /** Indica si el Momento Revill está actualmente activo en el servidor */
    private boolean e;
+   /** Segundos restantes de la cuenta atrás del evento */
    private int f = 600;
+   /** Estado del cielo rojo apocalíptico */
    private boolean g;
+   /** Estado de reproducción de música de tensión en los clientes */
    private boolean h;
+   /** Bandera que indica si el evento ya ha finalizado */
    private boolean i;
+   /** Contador interno de ticks del servidor (20 ticks = 1 segundo) */
    private int j;
+   /** Objetivo actual en curso (BÚNKER, SUBIR A 250, BAJAR A -1) */
    private c k = com.eric.revill.j.c.a;
+   /** Objetivo preconfigurado para el próximo evento */
    private c l = com.eric.revill.j.c.a;
+   /** Registro de UUIDs de jugadores que ya han alcanzado el objetivo a salvo */
    private final Set<UUID> m = new HashSet<>();
 
+   /** Obtiene la instancia de configuración revill.json */
    public com.eric.revill.f.a a() {
       return this.b;
    }
 
+   /** Inicia la preparación del evento con el objetivo por defecto */
    public void a(MinecraftServer server) {
       this.a(server, com.eric.revill.j.c.a.b(), null);
    }
 
+   /** Inicia la preparación del evento con ruleta y mensaje personalizado */
    public void a(MinecraftServer server, String rouletteMessage) {
       this.a(server, com.eric.revill.j.c.a.b(), rouletteMessage);
    }
 
+   /** Inicia la preparación del evento configurando objetivo y mensaje adicional */
    public void a(MinecraftServer server, String taskId, String additionalMessage) {
       this.a(server, taskId, additionalMessage, "roja", this.b.d, this.b.revillMusicEnabled);
    }
 
+   /**
+    * Configura los parámetros del Momento Revill y lanza la ruleta visual a todos los jugadores.
+    * 
+    * @param server Servidor de Minecraft
+    * @param taskId Identificador del objetivo (bunker, subir, bajar)
+    * @param message Mensaje que se mostrará en pantalla
+    * @param color Color del título o ruleta
+    * @param durationSeconds Duración en segundos del evento
+    * @param musicEnabled Si debe sonar la música ambiental de tensión
+    */
    public void a(MinecraftServer server, String taskId, String message, String color, int durationSeconds, boolean musicEnabled) {
       if (server != null && !this.e) {
          this.l = com.eric.revill.j.c.d(taskId);
@@ -63,10 +101,16 @@ public class a {
       }
    }
 
+   /** Obtiene el objetivo configurado para el evento */
    public c b() {
       return this.l;
    }
 
+   /**
+    * Comienza formalmente el Momento Revill en el servidor.
+    * Activa el cielo rojo, crea el waypoint del búnker si corresponde, inicia la cuenta atrás
+    * y notifica a todos los clientes conectados.
+    */
    public void b(MinecraftServer server) {
       if (server != null && !this.e) {
          this.e = true;
@@ -98,6 +142,12 @@ public class a {
       }
    }
 
+   /**
+    * Detiene o cancela el Momento Revill de forma inmediata.
+    * 
+    * @param server Servidor de Minecraft
+    * @param cancelled True si fue cancelado manualmente por un comando de admin
+    */
    public void a(MinecraftServer server, boolean cancelled) {
       boolean cancelledRoulette = com.eric.revill.g.a.c(server);
       if (this.e || this.i || cancelledRoulette) {
@@ -119,6 +169,10 @@ public class a {
       }
    }
 
+   /**
+    * Tick periódico ejecutado en cada ciclo del servidor.
+    * Actualiza la cuenta atrás cada 20 ticks, comprueba jugadores a salvo y genera meteoritos.
+    */
    public void c(MinecraftServer server) {
       if (server != null && this.e) {
          this.j++;
@@ -144,6 +198,7 @@ public class a {
       }
    }
 
+   /** Imprime el estado detallado del evento al emisor de un comando */
    public void a(CommandSourceStack source) {
       source.sendSuccess(
          () -> Component.literal(
@@ -162,6 +217,7 @@ public class a {
       );
    }
 
+   /** Carga el estado guardado del evento desde el almacenamiento del mundo (SavedData) */
    public void d(MinecraftServer server) {
       if (server != null) {
          DimensionDataStorage manager = server.overworld().getDataStorage();
@@ -178,6 +234,7 @@ public class a {
       }
    }
 
+   /** Guarda el estado actual del evento en el almacenamiento persistente del mundo */
    public void e(MinecraftServer server) {
       if (server != null && server.overworld() != null) {
          DimensionDataStorage manager = server.overworld().getDataStorage();
@@ -197,6 +254,7 @@ public class a {
       this.e(server);
    }
 
+   /** Inicia la reproducción de la música de tensión en todos los clientes */
    private void g(MinecraftServer server) {
       if (server != null && this.b.h) {
          this.h = true;
@@ -204,6 +262,7 @@ public class a {
       }
    }
 
+   /** Emite avisos sonoros y en el chat en hitos de tiempo clave (10m, 5m, 2m, 1m, 30s, 10s) */
    private void a(MinecraftServer server, int seconds) {
       if (seconds == 600 || seconds == 300 || seconds == 120 || seconds == 60 || seconds == 30 || seconds == 10) {
          String text = switch (seconds) {
@@ -221,6 +280,10 @@ public class a {
       }
    }
 
+   /**
+    * Conclusión del evento al agotarse el tiempo:
+    * Todos los jugadores que no hayan alcanzado el objetivo son eliminados (player.kill()).
+    */
    private void h(MinecraftServer server) {
       this.e = false;
       this.i = true;
@@ -241,6 +304,7 @@ public class a {
       this.e(server);
    }
 
+   /** Envía un mensaje con el icono estilizado de DEDSAFIO 4 a todos los jugadores */
    private void b(MinecraftServer server, String message) {
       if (server != null) {
          Component text = com.eric.revill.c.a.a(Component.literal(message), com.eric.revill.c.a.Icon.c);
@@ -251,6 +315,7 @@ public class a {
       }
    }
 
+   /** Formatea segundos en formato MM:SS */
    private String a(int seconds) {
       int totalMinutes = seconds / 60;
       int remainingSeconds = seconds % 60;

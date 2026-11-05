@@ -1,5 +1,9 @@
 package com.eric.revill.l;
 
+/**
+ * Ítem base de moneda (Dedita) con soporte para descripciones y tooltips traducibles.
+ */
+
 import java.util.List;
 import net.minecraft.ChatFormatting;
 import net.minecraft.locale.Language;

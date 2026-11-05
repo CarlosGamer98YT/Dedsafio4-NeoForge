@@ -1,5 +1,13 @@
 package com.eric.revill.l;
 
+/**
+ * Registro de ítems y pestaña del modo creativo "Dedsafio 4".
+ * 
+ * Contiene las referencias a todas las monedas (Dedita Azul, Roja, Verde),
+ * consumibles (Corazones), herramientas (Palitomágico, Mochila, Guía de Admin)
+ * y configura la pestaña creativa oficial del mod.
+ */
+
 import com.eric.revill.ForgeRegistration;
 import java.util.UUID;
 import java.util.concurrent.atomic.AtomicReference;
@@ -44,43 +52,60 @@ public final class g {
    private static final ResourceLocation s = ResourceLocation.fromNamespaceAndPath("dedsafio-4-mechanics", "golem_totem_bonus");
    public static final ResourceLocation a = ResourceLocation.fromNamespaceAndPath("dedsafio-4-mechanics", "nutritotem_group");
    public static final ResourceKey<CreativeModeTab> b = ResourceKey.create(Registries.CREATIVE_MODE_TAB, a);
+
+   /** Moneda básica de Dedita Azul */
    public static final Supplier<Item> c = ForgeRegistration.registerEager(
       Registries.ITEM,
       ResourceLocation.fromNamespaceAndPath("dedsafio-4-mechanics", "dedita"),
       () -> new b(new Properties().stacksTo(64), "item.dedsafio-4-mechanics.dedita.tooltip")
    );
+   /** Moneda de alto valor: Dedita Roja (10000 unidades) */
    public static final Supplier<Item> d = ForgeRegistration.registerEager(
       Registries.ITEM,
       ResourceLocation.fromNamespaceAndPath("dedsafio-4-mechanics", "dedita_roja"),
       () -> new b(new Properties().stacksTo(64), "item.dedsafio-4-mechanics.dedita_roja.tooltip")
    );
+   /** Moneda de Dedita Rosa */
    public static final Supplier<Item> e = ForgeRegistration.registerEager(
       Registries.ITEM,
       ResourceLocation.fromNamespaceAndPath("dedsafio-4-mechanics", "dedita_rosa"),
       () -> new b(new Properties().stacksTo(64), "item.dedsafio-4-mechanics.dedita_rosa.tooltip")
    );
+   /** Moneda intermedia: Dedita Verde (100 unidades) */
    public static final Supplier<Item> f = ForgeRegistration.registerEager(
       Registries.ITEM,
       ResourceLocation.fromNamespaceAndPath("dedsafio-4-mechanics", "dedita_verde"),
       () -> new b(new Properties().stacksTo(64), "item.dedsafio-4-mechanics.dedita_verde.tooltip")
    );
+   /** Huevo generador para invocar la entidad del Cajero Automático (ATM) */
    public static final Supplier<Item> g2 = ForgeRegistration.registerEager(
       Registries.ITEM,
       ResourceLocation.fromNamespaceAndPath("dedsafio-4-mechanics", "cajero_spawn_egg"),
       () -> new a(com.eric.revill.i.b.a, 2503224, 5416959, new Properties())
    );
+   /** Palitomágico: herramienta de teletransporte instantáneo al punto de reaparición */
    public static final Supplier<Item> h = ForgeRegistration.registerEager(
       Registries.ITEM, ResourceLocation.fromNamespaceAndPath("dedsafio-4-mechanics", "palitomagico"), () -> new f(new Properties())
    );
+   /** Tótem Eon */
    public static final Supplier<Item> i = a("totem_eon", () -> new b(new Properties().stacksTo(1), "item.dedsafio-4-mechanics.totem_eon.tooltip"));
+   /** Tótem Flor */
    public static final Supplier<Item> j = a("totem_flor", () -> new b(new Properties().stacksTo(1), "item.dedsafio-4-mechanics.totem_flor.tooltip"));
+   /** Tótem Gólem */
    public static final Supplier<Item> k = a("totem_golem", () -> new b(new Properties().stacksTo(1), "item.dedsafio-4-mechanics.totem_golem.tooltip"));
+   /** Corazón del Limbo: resetea a cero los corazones adicionales acumulados */
    public static final Supplier<Item> l = a("corazon_limbo", () -> new e(b()));
+   /** Bolsa Primitiva: mochila portátil de capacidad básica */
    public static final Supplier<Item> m = a("bolsa_primitiva", () -> new h(false, new Properties().stacksTo(1)));
+   /** Ender Bag: mochila portátil avanzada vinculada al jugador */
    public static final Supplier<Item> n = a("ender_bag", () -> new h(true, new Properties().stacksTo(1)));
+   /** Corazón Rojo: otorga permanentemente +2 HP (un corazón completo) de salud máxima */
    public static final Supplier<Item> o = a("corazon_rojo", () -> new d(b()));
+   /** Corazón Dorado: concede absorción temporal prolongada */
    public static final Supplier<Item> p = a("corazon_dorado", () -> new c(b()));
+   /** Guía de Administrador con manual interactivo paginado */
    public static final Supplier<Item> t = a("admin_guide", () -> new AdminGuideItem(new Properties().stacksTo(1)));
+   /** Pestaña oficial del Modo Creativo para Dedsafio 4 */
    public static final Supplier<CreativeModeTab> q = ForgeRegistration.registerEager(
       Registries.CREATIVE_MODE_TAB,
       a,

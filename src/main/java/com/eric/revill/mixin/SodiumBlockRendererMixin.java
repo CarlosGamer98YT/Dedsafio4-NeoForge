@@ -1,5 +1,12 @@
 package com.eric.revill.mixin;
 
+/**
+ * Inyección de compatibilidad con Sodium / Embeddium en el renderizado de bloques de chunks.
+ * 
+ * Asegura que los bloques personalizados del mod (Buzón, Pedestal) se rendericen sin fallos
+ * de tessellation cuando el mod de optimización Sodium está instalado.
+ */
+
 import com.eric.revill.RevillClient;
 import com.eric.revill.fabric.api.EnvType;
 import com.eric.revill.fabric.api.Environment;

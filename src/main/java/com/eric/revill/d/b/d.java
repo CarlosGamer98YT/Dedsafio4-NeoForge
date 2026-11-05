@@ -1,5 +1,12 @@
 package com.eric.revill.d.b;
 
+/**
+ * Renderizador de auras y efectos de partículas en cliente.
+ * 
+ * Dibuja efectos mágicos y anillos de partículas alrededor de jugadores o bloques especiales
+ * (por ejemplo durante la activación de totems o uso del Palitomágico).
+ */
+
 import com.mojang.blaze3d.systems.RenderSystem;
 import java.util.ArrayList;
 import java.util.Locale;

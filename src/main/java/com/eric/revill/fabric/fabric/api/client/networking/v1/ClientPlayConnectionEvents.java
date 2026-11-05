@@ -1,5 +1,11 @@
 package com.eric.revill.fabric.fabric.api.client.networking.v1;
 
+/**
+ * Adaptador de eventos de conexión del cliente en Fabric API a NeoForge.
+ * 
+ * Notifica a los listeners cuando el cliente se conecta o desconecta de un servidor.
+ */
+
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 import net.minecraft.client.Minecraft;

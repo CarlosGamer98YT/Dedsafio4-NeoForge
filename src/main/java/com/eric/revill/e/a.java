@@ -1,5 +1,23 @@
 package com.eric.revill.e;
 
+/**
+ * Árbol de comandos principal: `/dedsafio4`
+ * 
+ * Ofrece la suite completa de comandos administrativos y de operador de DEDSAFIO 4:
+ * - `/dedsafio4`: Abre el centro de control en pantalla.
+ * - `/dedsafio4 start`: Inicia el evento REVILL con la tarea predeterminada del búnker.
+ * - `/dedsafio4 stop`: Cancela el evento REVILL activo.
+ * - `/dedsafio4 status`: Consulta tiempo restante, tarea actual y estado de meteoritos.
+ * - `/dedsafio4 announce <mensaje>`: Envía un anuncio con sonido a todos los jugadores.
+ * - `/dedsafio4 fusion [entrar|salir]`: Controla la cinemática de Fusión en el servidor.
+ * - `/dedsafio4 bunker set|show|clear`: Define o consulta las coordenadas 3D del búnker.
+ * - `/dedsafio4 meteorites on|off`: Activa o desactiva la caída de meteoritos.
+ * - `/dedsafio4 config`: Muestra parámetros actuales de duración y meteoritos.
+ * - `/dedsafio4 waypoint add|remove`: Crea o elimina marcadores de coordenadas en el mundo.
+ * - `/dedsafio4 color <color>`: Lanza la animación de ruleta con el color indicado (roja, verde, naranja, rosada o random).
+ * - `/dedsafio4 revive [jugador] [modo]`: Restaura a un jugador eliminado volviendo a modo supervivencia o especificado.
+ */
+
 import com.eric.revill.RevillMod;
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.arguments.IntegerArgumentType;

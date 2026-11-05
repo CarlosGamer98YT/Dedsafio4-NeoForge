@@ -1,5 +1,9 @@
 package com.eric.revill.p;
 
+/**
+ * Emisor y difusor de paquetes de red para eventos, ruletas y animaciones visuales.
+ */
+
 import com.eric.revill.fabric.fabric.api.networking.v1.PacketByteBufs;
 import com.eric.revill.fabric.fabric.api.networking.v1.ServerPlayNetworking;
 import net.minecraft.network.FriendlyByteBuf;

@@ -1,5 +1,9 @@
 package com.eric.revill.m;
 
+/**
+ * Canales de red para el envío, recepción y reclamo de cartas del Buzón.
+ */
+
 import java.util.ArrayList;
 import java.util.List;
 import com.eric.revill.fabric.fabric.api.networking.v1.PacketByteBufs;
